@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+html {
+    background-color: black;
+
+}
+
+.nav {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 70px;
+    background-color: rgba(0, 0, 0, 0);
+    /* border-bottom: 2px solid rgb(255, 180, 42); */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    margin: 15px;
+}
+
+.nav-lista {
+    display: flex;
+    flex-direction: row;
+}
+
+.nav-lista li a {
+    padding: 25px 15px;
+    color: rgb(255, 180, 42);
+    text-decoration: none;
+    font-family: 'Poppins';
+    text-transform: uppercase;
+    transition: .3s;
+    text-shadow: 0 6px 6px black;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+}
+
+.nav-lista li a:hover {
+    color: black;
+    background-color: rgb(255, 180, 42);
+    text-shadow: 0 0px 0px black;
+    transition: .3s;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.nav-lista li {
+    color: rgb(255, 180, 42);
+    margin: auto;
+}
+
+
+#video {
+    width: 100%;
+    height: 632px;
+}
+
+.fundo-video {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+}
+
+@media (min-aspect-ratio:16/9) {
+    .fundo-video {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-aspect-ratio:16/9) {
+    .fundo-video {
+        width: auto;
+        height: 100%;
+    }
+}
+
+.campos-video {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.575);
+    height: 100%;
+    /* padding: 500px auto; */
+
+}
+
+.campos-video h1 {
+    width: 30%;
+    font-size: 50px;
+    margin: auto auto 0 auto;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    text-shadow: 0 6px 10px black;
+}
+
+.campos-video a {
+    width: auto;
+    font-size: 25px;
+    text-decoration: none;
+    margin: 50px auto auto auto;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    text-shadow: 0 3px 6px black;
+    color: rgb(255, 180, 42);
+    padding: 15px;
+    border-radius: 50px;
+    background-color: rgba(255, 180, 42, 0);
+    border: 2px solid rgb(255, 180, 42);
+    cursor: pointer;
+    transition: .3s;
+}
+
+.campos-video a:hover {
+    background-color: rgb(255, 180, 42);
+    color: black;
+    text-shadow: 0 0 0 black;
+    transition: .3s;
+}
+
+/* Sobre */
+#sobre {
+    width: 80%;
+    height: auto;
+    transition: .3s;
+    padding: 5% 10%;
+}
+
+.space {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 5%;
+}
+
+.campos-sobre {
+    color: white;
+    width: 40%;
+    margin: 20px auto;
+    text-align: justify;
+}
+
+.campos-sobre h1 {
+    color: rgb(255, 180, 42);
+    text-transform: uppercase;
+    font-family: 'Poppins';
+    font-size: 25px;
+}
+
+.campos-sobre p {
+    padding: 10px 0;
+    font-weight: 100px;
+    font-family: 'Montserrat';
+    line-height: 1.2;
+}
+
+.diagrama-sobre {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.diagrama-sobre h1 {
+    color: rgb(255, 180, 42);
+    text-transform: uppercase;
+    font-family: 'Poppins';
+    font-size: 25px;
+}
+
+.video-sobre {
+    margin: 20px auto;
+    width: 70%;
+}
+
+/* onda1 */
+#onda1 {
+    width: 100%;
+    height: 150px;
+} .onda1{
+    width: 100%;
+    height: 167px;
+}
+
+/* Conceitos */
+#conceitos {
+    width: 80%;
+    height: auto;
+    transition: .3s;
+    padding: 5% 10%;
+    background-color: rgb(255, 180, 42);
+    margin: auto;
+}
+
+.campos-conceito {
+    color: black;
+    width: 40%;
+    margin: 20px auto;
+    text-align: justify;
+}
+
+.campos-conceito h1 {
+    text-transform: uppercase;
+    font-family: 'Poppins';
+    font-size: 25px;
+}
+
+.campos-conceito p {
+    padding: 10px 0;
+    font-family: 'Quicksand', sans-serif;
+    line-height: 1.2;
+}
