@@ -94,7 +94,7 @@ html {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.575);
+    background-color: rgba(0, 0, 0, 0.34);
     height: 100%;
     /* padding: 500px auto; */
 
@@ -198,31 +198,106 @@ html {
     height: 130px;
 }
 
-/* Conceitos */
-#conceitos {
+/* crypto */
+#crypto {
     width: 80%;
     height: auto;
     transition: .3s;
-    padding: 5% 10%;
+    padding: 2% 10%;
     background-color: rgb(255, 180, 42);
     margin: auto;
 }
+.space-crypto {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 5%;
+}
 
-.campos-conceito {
+.campos-conceito-crypto {
     color: black;
     width: 40%;
-    margin: 20px auto;
+    margin: 0px auto;
     text-align: justify;
 }
 
-.campos-conceito h1 {
+.campos-conceito-crypto h1 {
+    padding: 30px 0 0 0;
     text-transform: uppercase;
     font-family: 'Poppins';
     font-size: 25px;
 }
 
-.campos-conceito p {
+.campos-conceito-crypto p {
     padding: 10px 0;
     font-family: 'Quicksand', sans-serif;
     line-height: 1.2;
 }
+
+
+.pizza-crypto {
+    /* background-color: #CF8600   ; */
+    box-shadow: 0 1px 8px;
+    border-radius: 20px;
+}
+.space-pizza-crypto {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 5%;
+}
+.campos-pizza-crypto {
+    color: black;
+    width: 40%;
+    margin: 0 auto 15px auto;
+    text-align: justify;
+}
+.campos-pizza-crypto h1, .img-pizza-crypto h1 {
+    padding: 30px 0 0 0;
+    text-transform: uppercase;
+    font-family: 'Poppins';
+    font-size: 25px;
+    text-align: start;
+}
+.campos-pizza-crypto p, .img-pizza-crypto p {
+    padding: 10px 0;
+    font-family: 'Quicksand', sans-serif;
+    line-height: 1.2;
+    text-align: start;
+}
+.space-data {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.img-pizza-crypto {
+    color: black;
+    width: 40%;
+    margin: 100px auto;
+    text-align: center;
+    box-shadow: 0 1px 8px;
+    border-radius: 20px;
+    padding: 30px 10px 10px 10px;
+    background-color: #CF8600;
+    height: auto;
+}
+.img-pizza-crypto img {
+    width: 170px;
+    height: 100px;
+}
+.img-pizza-crypto h1 {
+    text-align: center;
+}.img-pizza-crypto p {
+    text-align: center;
+    color: rgb(255, 180, 42);
+    font-family: 'Poppins';
+    text-shadow: 0 2px 8px black;
+}
+.space-img-pizza-crypto {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 5%;
+}
+
+
