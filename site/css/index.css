@@ -7,6 +7,18 @@ html {
 
 }
 
+h1 { 
+    color: rgb(255, 180, 42);
+    text-transform: uppercase;
+    font-family: 'Poppins';
+    font-size: 25px;
+}
+p {
+    padding: 10px 0;
+    font-weight: 100px;
+    font-family: 'Montserrat';
+    line-height: 1.2;
+}
 
 
 .nav {
@@ -105,7 +117,6 @@ html {
     font-size: 50px;
     margin: auto auto 0 auto;
     color: white;
-    font-family: 'Poppins', sans-serif;
     text-shadow: 0 6px 10px black;
 }
 
@@ -155,33 +166,12 @@ html {
     text-align: justify;
 }
 
-.campos-sobre h1 {
-    color: rgb(255, 180, 42);
-    text-transform: uppercase;
-    font-family: 'Poppins';
-    font-size: 25px;
-}
-
-.campos-sobre p {
-    padding: 10px 0;
-    font-weight: 100px;
-    font-family: 'Montserrat';
-    line-height: 1.2;
-}
-
 .diagrama-sobre {
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-.diagrama-sobre h1 {
-    color: rgb(255, 180, 42);
-    text-transform: uppercase;
-    font-family: 'Poppins';
-    font-size: 25px;
 }
 
 .video-sobre {
@@ -236,7 +226,6 @@ html {
 
 
 .pizza-crypto {
-    /* background-color: #CF8600   ; */
     box-shadow: 0 1px 8px;
     border-radius: 20px;
 }
@@ -252,12 +241,10 @@ html {
     margin: 0 auto 15px auto;
     text-align: justify;
 }
-.campos-pizza-crypto h1, .img-pizza-crypto h1 {
+.campos-conceito-crypto h1, .campos-pizza-crypto h1, .img-pizza-crypto h1 {
     padding: 30px 0 0 0;
-    text-transform: uppercase;
-    font-family: 'Poppins';
-    font-size: 25px;
     text-align: start;
+    color: black;
 }
 .campos-pizza-crypto p, .img-pizza-crypto p {
     padding: 10px 0;
@@ -291,7 +278,7 @@ html {
     text-align: center;
     color: rgb(255, 180, 42);
     font-family: 'Poppins';
-    text-shadow: 0 2px 8px black;
+    text-shadow: 0 2px 10px black;
 }
 .space-img-pizza-crypto {
     display: flex;
@@ -301,3 +288,31 @@ html {
 }
 
 
+/* cotacao */
+
+#cotacao {
+    width: 80%;
+    height: auto;
+    transition: .3s;
+    padding: 2% 10%;
+    margin: auto;
+}
+.space-cotacao {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 5%;
+}
+
+.data-cotacao {
+    color: white;
+    width: 40%;
+    margin: 20px auto;
+    text-align: justify;
+}
+.aovivo-cotacao {
+    color: white;
+    width: 40%;
+    margin: 20px auto;
+    text-align: center;
+}
