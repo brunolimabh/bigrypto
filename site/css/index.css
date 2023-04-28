@@ -289,30 +289,223 @@ p {
 
 
 /* cotacao */
-
 #cotacao {
     width: 80%;
     height: auto;
     transition: .3s;
-    padding: 2% 10%;
+    padding: 2% 0;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+
+.ano-cotacao {
+    width: 45%;
+    height: 100%;
+    border-radius: 30px;
+    text-align: center;
+} 
+
+.campo-ano-cotacao {
+    width: auto;
+    background-color: rgb(255, 180, 42);
+    border-radius: 30px;
+    padding: 20px;
+}.campo-ano-cotacao h1 {
+    color: black;
+    padding-bottom: 10px;
+} .campo-ano-cotacao p {
+    font-family: 'Quicksand', sans-serif;
+} .campo-ano-cotacao select {
+    width: 40%;
+    height: 30px;
+    margin: auto;
+    background-color: #CF8600;
+    border-radius: 50px;
+    padding: 0 0 0 15px;
+    font-size: 16px;
+    border: 2px solid black;
+}
+
+.grafico-ano-cotacao {
+    width: auto;
+    background-color: rgb(255, 180, 42);
+    margin-top: 5%;
+    border-radius: 30px;
+    padding: 20px;
+}
+
+
+.aovivo-cotacao {
+    width: 45%;
+    height: 100%;
+    border-radius: 30px;
+    text-align: center;
+}
+.campo-aovivo-cotacao {
+    width: auto;
+    background-color: rgb(255, 180, 42);
+    border-radius: 30px;
+    padding: 20px;
+    
+
+} .campo-aovivo-cotacao h1 {
+    color: black;
+    text-align: center;
+    padding-bottom: 10px;
+} .campo-aovivo-cotacao p {
+    font-family: 'Quicksand', sans-serif;
+} .selecao-aovivo-cotacao {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+} .selecao-aovivo-cotacao select {
+    width: 40%;
+    height: 30px;
+    margin: auto;
+    background-color: #CF8600;
+    border-radius: 50px;
+    padding: 0 0 0 15px;
+    font-size: 16px;
+    border: 2px solid black;
+}
+
+.grafico-aovivo-cotacao {
+    width: auto;
+    background-color: rgb(255, 180, 42);
+    margin-top: 5%;
+    border-radius: 30px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.porcent-grafico-aovivo-cotacao {
+    width: 95%;
+    height: auto;
+    margin: auto;
+    background-color: #CF8600;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: 20px;
+} .porcent-infos {
+    padding: 10px 20px;
+} .porcent-infos h1 {
+    color: black;
+    font-size: 16px;
+} .porcent-infos p {
+    font-family: 'Poppins';
+    color: black;
+    font-size: 16px;
+}
+
+
+/* cotacao */
+#simulacao {
+    width: 80%;
+    height: auto;
+    transition: .3s;
+    padding: 2% 10% 0 10%;
+    background-color: rgb(255, 180, 42);
     margin: auto;
 }
-.space-cotacao {
+.space-simulacao {
     display: flex;
     flex-direction: row;
     width: 100%;
-    margin-bottom: 5%;
+} .space-select {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
 }
 
-.data-cotacao {
-    color: white;
-    width: 40%;
-    margin: 20px auto;
-    text-align: justify;
-}
-.aovivo-cotacao {
-    color: white;
+.campo-simulacao {
     width: 40%;
     margin: 20px auto;
     text-align: center;
+    color: black;
+} .campo-simulacao h1 {
+    color: black;
+} .campo-simulacao p {
+    font-family: 'Quicksand', sans-serif;
+} 
+.slc-sim {
+    width: 100%;
+}.slc-sim select {
+    width: 80%;
+    height: 30px;
+    margin: auto;
+    background-color: #CF8600;
+    border-radius: 50px;
+    padding: 0 0 0 15px;
+    font-size: 16px;
+    border: 2px solid black;
+} .campo-simulacao input {
+    width: 40%;
+    height: 30px;
+    margin: auto;
+    background-color: #CF8600;
+    border-radius: 50px;
+    padding: 0 15px 0 15px;
+    font-size: 16px;
+    border: 2px solid black;
+} .btn-simular {
+    width: auto;
+    font-size: 20px;
+    text-decoration: none;
+    margin: 20px auto 0 auto;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    color: black;
+    padding: 5px 30px;
+    border-radius: 50px;
+    background-color: rgba(255, 180, 42, 0);
+    border: 2px solid black;
+    cursor: pointer;
+    transition: .3s;
 }
+.anos-campo-simulacao {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 30px;
+}
+
+
+/* onda2 */
+#onda2 {
+    width: 100%;
+    height: 130px;
+} .onda2{
+    width: 100%;
+    height: 130px;
+}
+
+
+/* footer */
+.footer {
+    display: flex;
+    justify-content: space-evenly;
+    width: 80%;
+    margin: 50px auto;
+}
+.logo-footer {
+    width: 100px;
+    height: 100px;
+}
+.footer-lista li a {
+    color: rgb(255, 180, 42);
+    font-family: 'Poppins';
+    text-decoration: none;
+    line-height: 1.4;
+}
+/* .redes {
+    width: 75px;
+    height: 75px;
+
+} */
