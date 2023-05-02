@@ -2,6 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 
+canvas {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
 html {
     background-color: black;
 
@@ -407,6 +413,19 @@ p {
     font-family: 'Poppins';
     color: rgb(58, 247, 0);
     font-size: 16px;
+}
+
+.grafico-aovivo {
+    width: 95%;
+    height: auto;
+    margin: 10px auto 0  auto;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: 20px;
+    border: 3px solid rgb(255, 180, 42);
+    box-shadow: 0 2px 8px black;
 }
 
 
