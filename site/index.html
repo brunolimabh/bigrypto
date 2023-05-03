@@ -12,6 +12,7 @@
     <script src="http://www.chartjs.org/dist/2.7.1/Chart.js"></script>
     <script src="http://www.chartjs.org/samples/latest/utils.js"></script>
     <script src="js/simulaçao.js"></script>
+    <script src="js/cotacao.js"></script>
     <title>Bigrypto</title>
 </head>
 
@@ -162,13 +163,14 @@
                     <h1>Acompanhar ao vivo</h1>
                     <div class="selecao-aovivo-cotacao">
                         <p>Selecione a moeda desejada:</p>
-                        <select>
-                            <option value="">Dolar</option>
-                            <option value="">Bitcoin</option>
-                            <option value="">Ethereum</option>
-                            <option value="">Solana</option>
+                        <select id="cripto_aovivo">
+                            <option value="USDT">Dolar</option>
+                            <option value="BTC">Bitcoin</option>
+                            <option value="ETH">Ethereum</option>
+                            <option value="SOL">Solana</option>
                         </select>
                     </div>
+                    <button onclick="ver_cotacao_aovivo()">Cotar</button>
 
                 </div>
                 <div class="grafico-aovivo-cotacao">
@@ -268,9 +270,6 @@
 </body>
 
 </html>
-
-<script src="cep.js"></script>
-<script src="cotacao.js"></script>
 
 <!-- <input type="text" id="ipt_cep"><br><br>
 <button onclick="ver_cep()">Analisar CEP</button>
