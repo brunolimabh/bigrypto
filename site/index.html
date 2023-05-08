@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="css/index.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
     <script src="http://www.chartjs.org/dist/2.7.1/Chart.js"></script>
-    <script src="http://www.chartjs.org/samples/latest/utils.js"></script>
     <script src="js/simulaçao.js"></script>
     <script src="js/cotacao.js"></script>
     <title>Bigrypto</title>
@@ -151,6 +150,8 @@
                         <option value="">2018</option>
                         <option value="">2017</option>
                     </select>
+                    <button class="btn-cotar" onclick="ver_cotacao_aovivo()">Cotar</button>
+
                 </div>
                 <div class="grafico-ano-cotacao">
                     <div class="grafico-aovivo">
@@ -170,11 +171,11 @@
                             <option value="SOL">Solana</option>
                         </select>
                     </div>
-                    <button onclick="ver_cotacao_aovivo()">Cotar</button>
+                    <button class="btn-cotar" onclick="ver_cotacao_aovivo()">Cotar</button>
 
                 </div>
                 <div class="grafico-aovivo-cotacao">
-                    <div class="porcent-grafico-aovivo-cotacao">
+                    <!-- <div class="porcent-grafico-aovivo-cotacao">
                         <div class="porcent-infos">
                             <h1>24 horas</h1>
                             <p>-%</p>
@@ -191,9 +192,9 @@
                             <h1>1 ano</h1>
                             <p>-%</p>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="grafico-aovivo">
-
+                        <canvas id="aoVivo"></canvas>
                     </div>
                 </div>
             </div>
@@ -271,81 +272,27 @@
 
 </html>
 
-<!-- <input type="text" id="ipt_cep"><br><br>
-<button onclick="ver_cep()">Analisar CEP</button>
-<div id="msg"></div> -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
-    var contextoLm35Temperatura = document.getElementById('lm35Temperatura').getContext('2d');
-    contextoLm35Temperatura.canvas.width = 1000;
-    contextoLm35Temperatura.canvas.height = 300;
-    var lm35Temperatura = new Chart(
-        contextoLm35Temperatura,
-        {
-            type: 'line',
-            data: {
-                datasets: [{
-                    label: 'Temperatura',
-                    type: 'line',
-                    borderColor: ['#ffd902'],
-                    backgroundColor: ['#ffe135']
-                }]
-            },
-            options: {
-                scales: {
-                    xAxes: [{
-                        distribution: 'series',
-                        ticks: {
-                            beginAtZero: true
-                        }
-                    }],
-                    yAxes: [{
-                        scaleLabel: {
-                            display: true,
-                            labelString: 'Temperatura'
-                        },
-                        ticks: {
-                            beginAtZero: true
-                        }
-                    }]
-                },
-                animation: {
-                    duration: 0
+    const ctx = document.getElementById('aoVivo');
+    let graficoC = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10",],
+            datasets: [{
+                label: "Valor",
+                data: [],
+                borderWidth: 4,
+                borderColor: "Orange",
+            }],
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: false
                 }
             }
         }
-    );
-
-    var paginacao = {};
-    var tempo = {};
-    function obterDados(grafico, endpoint) {
-        var http = new XMLHttpRequest();
-        http.open('GET', 'http://localhost:3000/sensores/' + endpoint, false);
-        http.send(null);
-        var valores = JSON.parse(http.responseText);
-        if (paginacao[endpoint] == null) {
-            paginacao[endpoint] = 0;
-        }
-        if (tempo[endpoint] == null) {
-            tempo[endpoint] = 0;
-        }
-        // Exibir à partir do último elemento exibido anteriormente
-        var ultimaPaginacao = paginacao[endpoint];
-        paginacao[endpoint] = valores.length;
-        var valores = valores.slice(ultimaPaginacao);
-        valores.forEach((valor) => {
-            //Máximo de 60 itens exibidos no gráfico
-            if (grafico.data.labels.length == 10 && grafico.data.datasets[0].data.length == 10) {
-                grafico.data.labels.shift();
-                grafico.data.datasets[0].data.shift();
-            }
-
-            grafico.data.labels.push(tempo[endpoint]++);
-            grafico.data.datasets[0].data.push(parseFloat(valor));
-            grafico.update();
-        })
-    }
-
-    // setInterval(() => {obterDados(lm35Temperatura, 'lm35/temperatura')}, 1000);
-
+    });
 </script>
