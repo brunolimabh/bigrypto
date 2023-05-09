@@ -38,10 +38,8 @@ function ver_cotacao_aovivo() {
         }
     
         // graficoC.data.datasets.push(listaPreco)
-        
-
         // console.log(graficoC.data.datasets[0].data.push(20))
-        console.log(graficoC.data.datasets[0])
+        // console.log(graficoC.data.datasets[0])
         graficoC.update()
     })
 }
