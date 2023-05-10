@@ -1,0 +1,17 @@
+/* footer */
+.footer {
+    display: flex;
+    justify-content: space-evenly;
+    width: 80%;
+    margin: 50px auto;
+}
+.logo-footer {
+    width: 100px;
+    height: 100px;
+}
+.footer-lista li a {
+    color: rgb(255, 180, 42);
+    font-family: 'Poppins';
+    text-decoration: none;
+    line-height: 1.4;
+}

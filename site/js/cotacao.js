@@ -1,5 +1,3 @@
-const mysql = require('mysql2');
-
 // fetch('url') = chama o link que será usado
 // then() = pega oq esta dentro e cria uma função / nome_qualquer = nome d afuncao criada
 // nome_qualquer.json = exibir a API
@@ -7,6 +5,7 @@ const mysql = require('mysql2');
 // e dentro dessa respoosta eu quero o corpo desse resposta e me retorne
 
 // function ver_cotacao_banco() {
+//     const mysql = require('mysql2');
 //     var onde = '';
 //     const poolBancoDados = mysql.createPool(
 //         {
@@ -17,9 +16,6 @@ const mysql = require('mysql2');
 //             database: 'bigrypto'
 //         }
 //     ).promise();
-
-
-
 //     poolBancoDados.execute(
 //         `SELECT media FROM moedaAno WHERE ${}`,
 //     );
@@ -63,7 +59,7 @@ function ver_cotacao_aovivo() {
             }
             cont++;
         }
-        graficoC.update()
+        graficoC.update();
     })
 }
 

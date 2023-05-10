@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+canvas {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+html {
+    background-color: black;
+
+}
+
+h1 { 
+    color: rgb(255, 180, 42);
+    text-transform: uppercase;
+    font-family: 'Poppins';
+    font-size: 25px;
+}
+p {
+    padding: 10px 0;
+    font-weight: 100px;
+    font-family: 'Montserrat';
+    line-height: 1.2;
+}
+
+
+#nav {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    transition: .5s;
+    box-shadow: 0 6px 6px black;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    margin: 15px;
+}
+
+.nav-lista-vazio,.nav-lista-preto , .nav-lista-laranja{
+    display: flex;
+    flex-direction: row;
+}
+
+.nav-lista-vazio  li a {
+    padding: 25px 15px;
+    color: rgb(255, 180, 42);
+    text-decoration: none;
+    font-family: 'Poppins';
+    text-transform: uppercase;
+    text-shadow: 0 6px 6px black;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    transition: .3s;
+} .nav-lista-vazio li a:hover {
+    color: black;
+    background-color: rgb(255, 180, 42);
+    text-shadow: 0 0px 0px black;
+    transition: .3s;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.nav-lista-vazio li {
+    color: rgb(255, 180, 42);
+    margin: auto;
+}
+
+.nav-lista-preto  li a {
+    padding: 25px 15px;
+    color: rgb(255, 180, 42);
+    text-decoration: none;
+    font-family: 'Poppins';
+    text-transform: uppercase;
+    text-shadow: 0 6px 6px black;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    transition: .3s;
+} .nav-lista-preto li a:hover {
+    color: black;
+    background-color: rgb(255, 180, 42);
+    text-shadow: 0 0px 0px black;
+    transition: .3s;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.nav-lista-preto li {
+    color: rgb(255, 180, 42);
+    margin: auto;
+}
+
+.nav-lista-laranja  li a {
+    padding: 25px 15px;
+    color: black;
+    text-decoration: none;
+    font-family: 'Poppins';
+    text-transform: uppercase;
+    text-shadow: 0 0px 0px black;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    transition: .3s;
+} .nav-lista-laranja li a:hover {
+    color: rgb(255, 180, 42);
+    background-color: black;
+    text-shadow: 0 6px 6px black;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    transition: .3s;
+}
+.nav-lista-laranja li {
+    color: rgb(255, 180, 42);
+    margin: auto;
+}

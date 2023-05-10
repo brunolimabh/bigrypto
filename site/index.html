@@ -7,24 +7,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/nav.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/footer.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
-    <script src="http://www.chartjs.org/dist/2.7.1/Chart.js"></script>
     <script src="js/simulaçao.js"></script>
     <script src="js/cotacao.js"></script>
+    <!-- <script src="js/nav.js"></script> -->
     <title>Bigrypto</title>
 </head>
 
 <body>
     <header>
-        <div class="nav">
+        <div id="nav">
             <img src="img/logo.png" alt="logo" class="logo">
-            <ul class="nav-lista">
+            <ul id="listaNav" class="nav-lista-vazio">
                 <li><a href="#sobre">Sobre a Bigrypto</a></li>
                 <li><a href="#crypto">Crypto</a></li>
-                <li><a href="">Cotação</a></li>
-                <li><a href="">Simulação</a></li>
-                <li><a href="">Login</a></li>
+                <li><a href="#cotacao">Cotação</a></li>
+                <li><a href="#simulacao">Simulação</a></li>
+                <li><a href="login.html">Login</a></li>
             </ul>
         </div>
     </header>
@@ -35,7 +37,7 @@
             </video>
             <div class="campos-video">
                 <h1>Bem-vindo ao Bigrypto</h1>
-                <a href="">Ver cotação ao vivo</a>
+                <a href="#cotacao">Ver cotação ao vivo</a>
             </div>
         </section>
         <section id="sobre">
@@ -277,7 +279,7 @@
 </html>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
+<script src="js/nav.js"></script>
 <script>
     const ctx = document.getElementById('aoVivo');
     let graficoC = new Chart(ctx, {
@@ -299,4 +301,5 @@
             }
         }
     });
+    
 </script>
