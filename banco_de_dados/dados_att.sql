@@ -20,6 +20,15 @@ create table moedaAno (
     foreign key(fkAno) references ano(idAno)
 );
 
+CREATE TABLE usuario (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	nome VARCHAR(50),
+	email VARCHAR(50),
+	senha VARCHAR(50)
+);
+
+insert into usuario values (null, 'bruno', 'bruno@gmail.com', 123321);
+
 -- Moedas disponíveis para consulta
 insert into moeda values
 	(null, 'Dolar'),
