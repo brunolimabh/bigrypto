@@ -302,5 +302,8 @@ select * from moeda;
 select * from ano;
 select * from moedaAno;
 
+create user 'bigrypto'@'localhost' identified by 'urubu100';
+grant all on bigrypto.* to 'bigrypto'@'localhost';
+flush privileges;
 
 
