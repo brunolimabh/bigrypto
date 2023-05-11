@@ -75,9 +75,11 @@ function simular() {
 
     total_atual = totalMoeda * valor_cripto_atual;
 
-    if (reais == '') {
-        
+    if (reais == '' || isNaN(reais)) {
+        erroReal.style.display = 'block';
     } else {
+        erroReal.style.display = 'none';
+
         if (cripto == "Solana" && data.value == "2017" || cripto == "Solana" && data.value == "2018" || cripto == "Solana" && data.value == "2019") {
             msg_simulacao.innerHTML = `Caso deseje simular uma cotação da moeda Solana, opte pelos anos acima de 2020, pois foi o seu ano de lançamento!`;
             ano_simulacao.innerHTML = ``;

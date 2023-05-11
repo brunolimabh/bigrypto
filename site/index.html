@@ -11,9 +11,8 @@
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/footer.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
-    <script src="js/simulaçao.js"></script>
+    <script src="js/simulacao.js"></script>
     <script src="js/cotacao.js"></script>
-    <!-- <script src="js/nav.js"></script> -->
     <title>Bigrypto</title>
 </head>
 
@@ -53,9 +52,8 @@
                 </div>
                 <div class="campos-sobre">
                     <h1>origem da bigryto?</h1>
-                    <p>Esse projeto foi criado por um aluno da universidade São Paulo Tech School que, no período
-                        da pandemia, precisava arrecadar dinheiro para ajudar a sua família em certos momentos de
-                        crise financeira e para o seu lazer. </p>
+                    <p>Esse projeto foi criado por um aluno da universidade São Paulo Tech School que no período
+                        da pandemia precisava arrecadar dinheiro para ajudar a sua família e para o seu próprio lazer. </p>
                     <p>Nesse contexto, esse estudante se aprofundou no mercado financeiro e realizou algumas
                         compras e vendas de cryptos e NFT's, e desde então, ele é apaixonado por este ramo!</p>
                 </div>
@@ -235,6 +233,7 @@
                     </div>
                     <p>Valor:</p>
                     <input type="text" id="ipt_valor_simulacao"><br>
+                    <p id="erroReal">Informe um número válido</p>
                     <button class="btn-simular" onclick="simular()">Simular</button>
                 </div>
                 <div class="campo-simulacao">
@@ -279,7 +278,7 @@
 </html>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="js/nav.js"></script>
+<script src="js/navbar.js"></script>
 <script>
     const ctx = document.getElementById('aoVivo');
     let graficoC = new Chart(ctx, {

@@ -37,7 +37,7 @@ p {
     flex-direction: row;
     justify-content: space-between;
     transition: .5s;
-    box-shadow: 0 6px 6px black;
+    /* box-shadow: 0 6px 6px black; */
 }
 
 .logo {
