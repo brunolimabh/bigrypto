@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <title>Bigrypto</title>
+</head>
+
+<body>
+    <header>
+        <div id="nav">
+            <img src="img/logo.png" alt="logo" class="logo">
+            <ul id="listaNav" class="nav-lista-vazio">
+                <li><a href="index.html#sobre">Sobre a Bigrypto</a></li>
+                <li><a href="index.html#crypto">Crypto</a></li>
+                <li><a href="index.html#cotacao">Cotação</a></li>
+                <li><a href="index.html#simulacao">Simulação</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </div>
+    </header>
+    
+    <main>
+        <section id="login">
+            <div class="">.</div>
+            <div class="campo">
+                <h1>Acesso cliente</h1>
+                <p>Email</p>
+                <input type="text" id="ipt_email">
+                <p>Senha</p>
+                <input type="text" id="ipt_senha">
+                <button onclick="logar()">login</button>
+            </div>
+
+        </section>
+    </main>
+        
+    <footer>
+        <div class="footer">
+            <img src="img/logo.png" alt="" class="logo-footer">
+            <ul class="footer-lista">
+                <li><a href="#sobre">Sobre a Bigrypto</a></li>
+                <li><a href="#crypto">Cripto</a></li>
+                <li><a href="#cotacao">Cotação</a></li>
+                <li><a href="#simulacao">Simulação</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+            <div class="redes">
+                <img src="img/logo.png" alt="" class="logo-footer">
+                <img src="img/logo.png" alt="" class="logo-footer">
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    function cadastrar() {
+        aguardar();
+
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var nomeVar = nome_input.value;
+        var cpfVar = cpf_input.value;
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+        var confirmacaoSenhaVar = confirmacao_senha_input.value;
+        var erroCadastro = false;
+
+        if (nomeVar == "" && cpfVar == "" && emailVar == "" && senhaVar == "" && confirmacaoSenhaVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            erroCadastro == true;
+        } else if (nomeVar == "" || nomeVar.length < 1) {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Mensagem de erro para o nome)";
+            erroCadastro == true;
+        } else if (cpfVar == "" || cpfVar.length != 14) {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Mensagem de erro para o cpf)";
+            erroCadastro == true;
+        } else if (emailVar == "" || emailVar.indexOf('@') == -1 || emailVar.indexOf('.') == -1) {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Mensagem de erro para o email)";
+            erroCadastro == true;
+        } else if (senhaVar == "" || senhaVar.length < 6) {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Mensagem de erro para o senha)";
+            erroCadastro == true;
+        } else if (confirmacaoSenhaVar == "" || confirmacaoSenhaVar != senhaVar) {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Mensagem de erro para o confirmar senha)";
+            erroCadastro == true;
+        }
+
+        if (erroCadastro == true) {
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                nomeServer: nomeVar,
+                emailServer: emailVar,
+                senhaServer: senhaVar,  
+                cpfServer: cpfVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                cardErro.style.display = "block";
+
+                mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+                setTimeout(() => {
+                    window.location = "login.html";
+                }, "2000")
+
+                limparFormulario();
+                finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+        });
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
+</script>
