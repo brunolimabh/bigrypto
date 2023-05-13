@@ -48,24 +48,34 @@
                 </div>
                 <div id="campoCadastro">
                     <div class="ipt-cadastro">
-                        <div class="space-cadastro">
-                            <p>Nome</p>
-                            <input type="text" id="ipt_nome">
-                            <div id="cardErroNome">Precisa ter mais de 3 caracteres</div>
+                        <div class="espaco-geral">
+                            <div class="espaco-campos">
+                                <p>Nome</p>
+                                <input type="text" id="ipt_nome">
+                                <div id="cardErroNome">Precisa ter mais de 3 caracteres</div>
+                            </div>
+                            <div class="espaco-campos">
+                                <p>Sobrenome</p>
+                                <input type="text" id="ipt_sobrenome">
+                            </div>
+                        </div>
                             <p>Email</p>
                             <input type="email" id="ipt_email">
                             <div id="cardErroEmail">Informe um email existente</div>
+                        <div class="espaco-geral">
+                            <div class="espaco-campos">
+                                <p>Senha</p>
+                                <input type="password" id="ipt_senha">
+                                <div id="cardErroSenha">Precisa ter mais de 5 caracteres</div>
+                            </div>
+                            <div class="espaco-campos">
+                                <p>Confirmar senha</p>
+                                <input type="password" id="ipt_confirmacaoSenha">
+                                <div id="cardErroConfirmaSenha">Senhas diferentes</div>
+                            </div>
                         </div>
-                        <div class="space-cadastro">
-                            <p>Senha</p>
-                            <input type="password" id="ipt_senha">
-                            <div id="cardErroSenha">Precisa ter mais de 5 caracteres</div>
-                            <p>Confirmar senha</p>
-                            <input type="password" id="ipt_confirmacaoSenha">
-                            <div id="cardErroConfirmaSenha">Senhas diferentes</div>
-                        </div>
-                        <button onclick="cadastrar()">cadastrar</button>
                     </div>
+                    <button onclick="cadastrar()">cadastrar</button>
                 </div>
             </div>
             

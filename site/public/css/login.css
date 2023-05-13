@@ -43,7 +43,7 @@
     border-bottom-right-radius: 20px;
     /* border: 2px solid rgb(255, 180, 42); */
     box-shadow: 0 4px 8px black;
-    display: block;
+    display: none;
 }
 .ipt_login {
     padding: 0 0 20px 0;
@@ -108,70 +108,77 @@
     color: red;
 }
 
-
-.ipt-cadastro {
-    display: flex;
-    flex-direction: row;
-}
-.space-cadastro {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 80%;
-}
 #campoCadastro {
-    width: 50%;
+    width: 100%;
     height: auto;
-    margin: 150px auto;
-    background-color: rgba(0, 0, 0, 0.76);
-    backdrop-filter: blur( 10px );
+    margin: auto;
     text-align: center;
+    background-color: rgba(0, 0, 0, 0.393);
     display: flex;
     flex-direction: column;
     padding: 20px;
-    filter: opacity(100%);
-    border-radius: 20px;
-    /* border: 2px solid var(--laranja); */
+    backdrop-filter: blur( 10px );
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    /* border: 2px solid rgb(255, 180, 42); */
     box-shadow: 0 4px 8px black;
-    display: none;
+    /* display: block; */
 }
+.ipt-cadastro {
+    width: 100%;
+}
+
+.espaco-geral {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+.espaco-campos {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    height: auto;
+}
+
 
 #campoCadastro p {
     color: white;
-    font-size: 20px;
-    font-weight: 800;
-}
-#campoCadastro input {
-    width: 70%;
+    font-size: 18px;
+    font-weight: 600;
+    width: 100%;
     margin: auto;
-    padding: 8px 15px;
-    border-radius: 10px;
-    border: 2px solid var(--laranja);
-    outline: none;
-    transition: .3s;
-} #campoCadastro input:focus {
-    transition: .3s;
-    transform: scale(1.07);
-
 }
+
+#campoCadastro input {
+    width: 100%;
+    margin: auto;
+    padding: 8px ;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    border: 2px solid var(--laranja); 
+    transition: .3s;   
+}
+ 
 #campoCadastro button {
     width: auto;
     font-size: 20px;
     text-decoration: none;
-    margin: 20px auto 0 auto;
+    margin: auto;
     font-family: 'Poppins', sans-serif;
     color: rgb(255, 180, 42);
     padding: 5px 30px;
     border-radius: 50px;
-    background-color: black;
-    border: 2px solid var(--laranja);
+    background-color: rgba(0, 0, 0, 0);
+    backdrop-filter: blur(0px) ;
+    border: 2px solid rgb(255, 180, 42);
     cursor: pointer;
-    text-transform: uppercase;
+    text-transform: uppercase;    
     transition: .3s;
 } #campoCadastro button:hover {
     transition: .3s;
     background-color: var(--laranja);
     box-shadow: 0 4px 4px black;
     color: black;
-    transform: translateY(-4px) ;
 }
