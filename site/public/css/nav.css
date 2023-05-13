@@ -10,7 +10,7 @@ canvas {
 
 html {
     background-color: black;
-
+    scroll-behavior: smooth;
 }
 
 h1 { 
@@ -26,6 +26,9 @@ p {
     line-height: 1.2;
 }
 
+:root {
+    --laranja: rgb(255, 180, 42);
+}
 
 #nav {
     position: fixed;

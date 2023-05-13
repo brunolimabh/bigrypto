@@ -6,20 +6,16 @@
     --laranja: rgb(255, 180, 42);
 }
 
-html {
-    background-color: black;
-    font-family: 'Montserrat';
-}
-
 .nav {
-    width: 20%;
+    font-family: 'Montserrat';
+    width: 250px;
     height: 100%;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     background-color: var(--laranja);
     text-align: center;
-    padding: 50px 0;
+    padding: 50px 0 0 0;
 }
 .nav h1 {
     font-family: 'Poppins';
@@ -51,9 +47,25 @@ html {
     font-family: 'Poppins';
     cursor: pointer;
     text-decoration: none;
+    box-shadow: 0px 1px 4px black;
     transition: .3s;
 } .nav-lista a:hover {
     transition: .3s;
-    background-color: var(--laranja);
-    box-shadow: 0 6px 6px black;
+    /* background-color: var(--laranja); */
+    box-shadow: 0px 3px 8px black;
+    transform: scale(1.07);
+}
+
+iframe{
+    border: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+}
+
+.frame {
+    width: calc(100% - 250px);
+    position: absolute;
+    height: 100%;
+    margin-left: 250px;
 }
