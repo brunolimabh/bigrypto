@@ -7,12 +7,38 @@
     <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/nav.css">
-    <link rel="stylesheet" href="css/analises.css">
-    <title>Bigrypto | Análises</title>
+    <link rel="stylesheet" href="css/graficos.css">
+    <title>Bigrypto | Gráficos</title>
 </head>
 <body>
     <main>
-        <section></section>
+        <section class="ano-cotacao">
+                <div class="campo-ano-cotacao">
+                    <p>Aqui você pode consultar o histórico mensal de algumas criptomoedades!</p>
+                    <p>Selecione a ano e a moeda desejada:</p>
+                    <select>
+                        <option value="">Dolar</option>
+                        <option value="">Bitcoin</option>
+                        <option value="">Ethereum</option>
+                        <option value="">Solana</option>
+                    </select>
+                    <select>
+                        <option value="">2022</option>
+                        <option value="">2021</option>
+                        <option value="">2020</option>
+                        <option value="">2019</option>
+                        <option value="">2018</option>
+                        <option value="">2017</option>
+                    </select>
+                    <button class="btn-cotar" onclick="ver_cotacao_aovivo()">Cotar</button>
+
+                </div>
+                <div class="grafico-ano-cotacao">
+                    <div class="grafico-aovivo">
+                        
+                    </div>
+                </div>
+        </section>
     </main>
 </body>
 </html>

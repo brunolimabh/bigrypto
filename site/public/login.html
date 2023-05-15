@@ -31,8 +31,8 @@
         <section id="login">
             <div class="telas">
                 <div class="btn-login-cadastro">
-                    <h1 onclick="exibirCadastro()">cadastro</h1>
-                    <h1 onclick="exibirLogin()">login</h1>
+                    <h1 id="btnCadastro" onclick="exibirCadastro()">cadastro</h1>
+                    <h1 id="btnLogin"onclick="exibirLogin()">login</h1>
                 </div>
                 <div id="displayLogin">
                     <div id="campoLogin">
@@ -88,7 +88,7 @@
                     </div>
                 </div>
             </div>
-
+            
         </section>
     </main>
 
@@ -197,11 +197,19 @@
     function exibirCadastro() {
         displayCadastro.style.display = 'block';
         displayLogin.style.display = 'none';
+        btnCadastro.style.backgroundColor = `var(--laranja)`;
+        btnCadastro.style.color = `black`;
+        btnLogin.style.backgroundColor = `rgba(0, 0, 0, 0)`;
+        btnLogin.style.color = `var(--laranja)`;
     }
 
     function exibirLogin() {
         displayCadastro.style.display = 'none';
         displayLogin.style.display = 'block';
+        btnLogin.style.backgroundColor = `var(--laranja)`;
+        btnLogin.style.color = `black`;
+        btnCadastro.style.backgroundColor = `rgba(0, 0, 0, 0)`;
+        btnCadastro.style.color = `var(--laranja)`;
     }
 
     function cadastrar() {

@@ -26,10 +26,26 @@
     margin: auto;
     display: flex;
     flex-direction: row;
-    justify-content: ;
-} .btn-login-cadastro button {
+    justify-content: space-around;
+    background-color: rgba(0, 0, 0, 0.393);
+    backdrop-filter: blur( 10px );
+    border: 2px solid rgb(255, 180, 42);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    cursor: pointer;
+} .btn-login-cadastro h1 {
     width: 100%;
-    padding: ;
+    text-align: center;
+    padding: 20px;
+    transition: .5s;
+} .btn-login-cadastro h1:hover {
+    transition: .5s;
+    color: black;
+}
+
+#btnLogin {
+    background-color: var(--laranja);
+    color: black;
 }
 
 .espaco-login {
@@ -46,16 +62,17 @@
     width: 100%;
     height: auto;
     margin: auto;
+    padding: 20px 0;
     text-align: center;
     background-color: rgba(0, 0, 0, 0.393);
     display: flex;
     flex-direction: column;
-    padding: 20px;
     backdrop-filter: blur( 10px );
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
     border: 2px solid rgb(255, 180, 42);
     box-shadow: 0 4px 8px black;
+    border-style: none solid solid solid;
 }
 .ipt_login {
     padding: 0 0 20px 0;
@@ -125,11 +142,12 @@
     background-color: rgba(0, 0, 0, 0.393);
     display: flex;
     flex-direction: column;
-    padding: 20px;
+    padding: 20px 0;
     backdrop-filter: blur( 10px );
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
     border: 2px solid rgb(255, 180, 42);
+    border-style: none solid solid solid;
     box-shadow: 0 4px 8px black;
 }
 .ipt-cadastro {

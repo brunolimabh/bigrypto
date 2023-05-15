@@ -11,7 +11,6 @@ html {
     font-size: 30px;
     background-image: url(../../img/faixa-bv.png);
     background-size: cover;
-    /* background-position: center; */
 }
 .bemvindo h1 {
     width: 100%;
@@ -23,4 +22,11 @@ html {
 .bemvindo span {
     font-family: 'Poppins';
     color: var(--laranja);
+    padding-left: 10px;
+}
+
+.sobre p {
+    width: 50%;
+    text-align: center;
+    margin: 10px auto;
 }

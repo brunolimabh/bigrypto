@@ -301,6 +301,7 @@ insert into moedaAno values
 select * from moeda;
 select * from ano;
 select * from moedaAno;
+select * from usuario;
 
 create user 'bigrypto'@'localhost' identified by 'urubu100';
 grant all on bigrypto.* to 'bigrypto'@'localhost';
