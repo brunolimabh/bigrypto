@@ -16,6 +16,7 @@
     flex-direction: column;
     width: 40%;
     height: auto;
+    margin: 130px auto auto auto;
 
 }
 
@@ -25,8 +26,20 @@
     margin: auto;
     display: flex;
     flex-direction: row;
+    justify-content: ;
 } .btn-login-cadastro button {
-    width: 50%;
+    width: 100%;
+    padding: ;
+}
+
+.espaco-login {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    width: 100%;
+    margin: 0 auto;
+    height: 90px;
 }
 
 #campoLogin {
@@ -41,24 +54,23 @@
     backdrop-filter: blur( 10px );
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
-    /* border: 2px solid rgb(255, 180, 42); */
+    border: 2px solid rgb(255, 180, 42);
     box-shadow: 0 4px 8px black;
-    display: none;
 }
 .ipt_login {
     padding: 0 0 20px 0;
 }
 #campoLogin p {
     color: white;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
     display: flex;
     width: 70%;
-    margin: auto;
+    margin: 0 auto;
 }
 #campoLogin input {
     width: 70%;
-    margin: auto;
+    margin: 0 auto;
     padding: 8px 15px;
     border-radius: 10px;
     border: none;
@@ -91,21 +103,18 @@
     color: black;
     transform: translateY(-4px) ;
 }
-#campoLogin a {
-    font-family: 'Montserrat';
-    color: white;
-    font-size: 14px;
-    font-weight: 600;
-    text-decoration: none;
-    margin: 10px auto 0 auto;
-}
 
-#cardErroEmail, #cardErroSenha {
+
+#cardErroLEmail, #cardErroLSenha {
     display: none;
-    font-family: 'Montserrat';
+    font-family: 'Poppins';
     font-weight: bolder;
     font-size: 14px;
     color: red;
+    width: 70%;
+    margin: 0 auto;
+    text-align: start;
+    
 }
 
 #campoCadastro {
@@ -120,26 +129,38 @@
     backdrop-filter: blur( 10px );
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
-    /* border: 2px solid rgb(255, 180, 42); */
+    border: 2px solid rgb(255, 180, 42);
     box-shadow: 0 4px 8px black;
-    /* display: block; */
 }
 .ipt-cadastro {
     width: 100%;
+    margin-bottom: 20px;
 }
 
 .espaco-geral {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
     width: 100%;
+    height: 80px;
 }
 .espaco-campos {
     display: flex;
     flex-direction: column;
+    justify-content: start;
+    align-items: start;
     width: 40%;
-    height: auto;
+    height: 80px;
 }
+.espaco-email {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    width: 100%;
+    margin: 0 auto;
+    height: 90px;
+} 
 
 
 #campoCadastro p {
@@ -147,18 +168,19 @@
     font-size: 18px;
     font-weight: 600;
     width: 100%;
-    margin: auto;
+    margin: 0;
 }
 
 #campoCadastro input {
-    width: 100%;
-    margin: auto;
-    padding: 8px ;
+    width: 80%;
+    margin: 0 auto;
+    padding: 8px 8px;
     border-radius: 10px;
     border: none;
     outline: none;
     border: 2px solid var(--laranja); 
     transition: .3s;   
+    text-align: center;
 }
  
 #campoCadastro button {
@@ -181,4 +203,25 @@
     background-color: var(--laranja);
     box-shadow: 0 4px 4px black;
     color: black;
+}
+
+#cardErroNome, #cardErroSobrenome, #cardErroCEmail, #cardErroCSenha, #cardErroConfirmarSenha {
+    display: none;
+    font-family: 'Poppins';
+    font-weight: bolder;
+    font-size: 14px;
+    color: red;
+    width: 70%;
+    margin: 0 auto;
+    text-align: start;
+}
+
+
+
+
+#displayLogin {
+    display: block;
+}
+#displayCadastro{
+    display: none;
 }
