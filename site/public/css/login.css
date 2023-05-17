@@ -20,6 +20,35 @@
 
 }
 
+.card_erro {
+    display: none;
+    position: fixed;
+    z-index: 3;
+    top: 70px;
+    right: 20px;
+    border: 2px solid var(--laranja);
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.393);
+    backdrop-filter: blur(10px);
+    color: var(--laranja);
+    font-family: 'Poppins';
+    border-radius: 10px;
+}
+.card_erro #mensagem_erro {
+    font-weight: 500;
+    font-size: 20px;
+}
+.loading-div {
+    width: 50px;
+    margin: auto;
+    display: none;
+}
+.loading-div img {
+    height: 50px;
+    width: 50px;
+}
+
+  
 .btn-login-cadastro {
     width: 100%;
     height: auto;
@@ -28,17 +57,21 @@
     flex-direction: row;
     justify-content: space-around;
     background-color: rgba(0, 0, 0, 0.393);
-    backdrop-filter: blur( 10px );
+    backdrop-filter: blur(10px);
     border: 2px solid rgb(255, 180, 42);
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     cursor: pointer;
-} .btn-login-cadastro h1 {
+}
+
+.btn-login-cadastro h1 {
     width: 100%;
     text-align: center;
     padding: 20px;
     transition: .5s;
-} .btn-login-cadastro h1:hover {
+}
+
+.btn-login-cadastro h1:hover {
     transition: .5s;
     color: black;
 }
@@ -67,16 +100,18 @@
     background-color: rgba(0, 0, 0, 0.393);
     display: flex;
     flex-direction: column;
-    backdrop-filter: blur( 10px );
+    backdrop-filter: blur(10px);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     border: 2px solid rgb(255, 180, 42);
     box-shadow: 0 4px 8px black;
     border-style: none solid solid solid;
 }
+
 .ipt_login {
     padding: 0 0 20px 0;
 }
+
 #campoLogin p {
     color: white;
     font-size: 18px;
@@ -85,6 +120,7 @@
     width: 70%;
     margin: 0 auto;
 }
+
 #campoLogin input {
     width: 70%;
     margin: 0 auto;
@@ -92,12 +128,15 @@
     border-radius: 10px;
     border: none;
     outline: none;
-    border: 2px solid var(--laranja); 
+    border: 2px solid var(--laranja);
     transition: .3s;
-} #campoLogin input:focus {
+}
+
+#campoLogin input:focus {
     transition: .3s;
     transform: scale(1.07);
 }
+
 #campoLogin button {
     width: auto;
     font-size: 20px;
@@ -108,21 +147,24 @@
     padding: 5px 30px;
     border-radius: 50px;
     background-color: rgba(0, 0, 0, 0);
-    backdrop-filter: blur(0px) ;
+    backdrop-filter: blur(0px);
     border: 2px solid rgb(255, 180, 42);
     cursor: pointer;
-    text-transform: uppercase;    
+    text-transform: uppercase;
     transition: .3s;
-} #campoLogin button:hover {
+}
+
+#campoLogin button:hover {
     transition: .3s;
     background-color: var(--laranja);
     box-shadow: 0 4px 4px black;
     color: black;
-    transform: translateY(-4px) ;
+    transform: translateY(-4px);
 }
 
 
-#cardErroLEmail, #cardErroLSenha {
+#cardErroLEmail,
+#cardErroLSenha {
     display: none;
     font-family: 'Poppins';
     font-weight: bolder;
@@ -131,7 +173,7 @@
     width: 70%;
     margin: 0 auto;
     text-align: start;
-    
+
 }
 
 #campoCadastro {
@@ -143,13 +185,14 @@
     display: flex;
     flex-direction: column;
     padding: 20px 0;
-    backdrop-filter: blur( 10px );
+    backdrop-filter: blur(10px);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     border: 2px solid rgb(255, 180, 42);
     border-style: none solid solid solid;
     box-shadow: 0 4px 8px black;
 }
+
 .ipt-cadastro {
     width: 100%;
     margin-bottom: 20px;
@@ -162,6 +205,7 @@
     width: 100%;
     height: 80px;
 }
+
 .espaco-campos {
     display: flex;
     flex-direction: column;
@@ -170,6 +214,7 @@
     width: 40%;
     height: 80px;
 }
+
 .espaco-email {
     display: flex;
     flex-direction: column;
@@ -178,7 +223,7 @@
     width: 100%;
     margin: 0 auto;
     height: 90px;
-} 
+}
 
 
 #campoCadastro p {
@@ -196,11 +241,11 @@
     border-radius: 10px;
     border: none;
     outline: none;
-    border: 2px solid var(--laranja); 
-    transition: .3s;   
+    border: 2px solid var(--laranja);
+    transition: .3s;
     text-align: center;
 }
- 
+
 #campoCadastro button {
     width: auto;
     font-size: 20px;
@@ -211,19 +256,25 @@
     padding: 5px 30px;
     border-radius: 50px;
     background-color: rgba(0, 0, 0, 0);
-    backdrop-filter: blur(0px) ;
+    backdrop-filter: blur(0px);
     border: 2px solid rgb(255, 180, 42);
     cursor: pointer;
-    text-transform: uppercase;    
+    text-transform: uppercase;
     transition: .3s;
-} #campoCadastro button:hover {
+}
+
+#campoCadastro button:hover {
     transition: .3s;
     background-color: var(--laranja);
     box-shadow: 0 4px 4px black;
     color: black;
 }
 
-#cardErroNome, #cardErroSobrenome, #cardErroCEmail, #cardErroCSenha, #cardErroConfirmarSenha {
+#cardErroNome,
+#cardErroSobrenome,
+#cardErroCEmail,
+#cardErroCSenha,
+#cardErroConfirmarSenha {
     display: none;
     font-family: 'Poppins';
     font-weight: bolder;
@@ -240,6 +291,7 @@
 #displayLogin {
     display: block;
 }
-#displayCadastro{
+
+#displayCadastro {
     display: none;
 }

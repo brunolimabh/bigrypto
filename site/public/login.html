@@ -29,10 +29,15 @@
 
     <main>
         <section id="login">
+            <div class="alerta_erro">
+                <div class="card_erro" id="cardErro">
+                    <span id="mensagem_erro"></span>
+                </div>
+            </div>
             <div class="telas">
                 <div class="btn-login-cadastro">
                     <h1 id="btnCadastro" onclick="exibirCadastro()">cadastro</h1>
-                    <h1 id="btnLogin"onclick="exibirLogin()">login</h1>
+                    <h1 id="btnLogin" onclick="exibirLogin()">login</h1>
                 </div>
                 <div id="displayLogin">
                     <div id="campoLogin">
@@ -49,6 +54,9 @@
                             </div>
                         </div>
                         <button onclick="entrar()">entrar</button>
+                        <div id="div_aguardar" class="loading-div">
+                            <img src="./assets/circle-loading.gif" id="loading-gif">
+                        </div>
                     </div>
                 </div>
                 <div id="displayCadastro">
@@ -88,7 +96,7 @@
                     </div>
                 </div>
             </div>
-            
+
         </section>
     </main>
 
@@ -116,6 +124,7 @@
 <script src="js/funcoes.js"></script>
 <script>
     function entrar() {
+        aguardar();
 
         var emailVar = ipt_l_email.value;
         var senhaVar = ipt_l_senha.value;
@@ -140,12 +149,14 @@
         }
 
         if (erroEntrar == true) {
+            finalizarAguardar();
             return false
         } else {
+            setInterval(sumirMensagem, 5000)
 
             console.log("FORM LOGIN: ", emailVar);
             console.log("FORM SENHA: ", senhaVar);
-    
+
             fetch("/usuarios/autenticar", {
                 method: "POST",
                 headers: {
@@ -157,41 +168,51 @@
                 })
             }).then(function (resposta) {
                 console.log("ESTOU NO THEN DO entrar()!")
-    
+
                 if (resposta.ok) {
                     console.log(resposta);
-    
+
                     resposta.json().then(json => {
                         console.log(json);
                         console.log(JSON.stringify(json));
-    
+
                         sessionStorage.EMAIL_USUARIO = json.email;
                         sessionStorage.NOME_USUARIO = json.nome;
                         sessionStorage.ID_USUARIO = json.id;
-    
+
                         setTimeout(function () {
                             window.location = "dashboard/index.html";
                         }, 1000); // apenas para exibir o loading
-    
+
                     });
-    
+                    cardErro.style.display = "block"
+                    cardErro.style.border = "2px solid greenyellow"
+                    cardErro.style.color = "greenyellow"
+                    mensagem_erro.innerHTML = "✅Entrando! Aguarde...✅";
+
                 } else {
-    
+
                     console.log("Houve um erro ao tentar realizar o login!");
-                    cardEntrar.innerHTML = 'red'
+                    cardErro.style.display = "block"
+                    cardErro.style.border = "2px solid red"
+                    cardErro.style.color = "red"
+                    mensagem_erro.innerHTML = "❌Conta não cadastrada❌";
+
                     resposta.text().then(texto => {
                         console.error(texto);
-                        // finalizarAguardar(texto);
+                        finalizarAguardar(texto);
                     });
                 }
-    
+
             }).catch(function (erro) {
                 console.log(erro);
             })
-    
             return false;
         }
+    }
 
+    function sumirMensagem() {
+        cardErro.style.display = "none"
     }
 
     function exibirCadastro() {
