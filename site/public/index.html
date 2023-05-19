@@ -53,7 +53,8 @@
                 <div class="campos-sobre">
                     <h1>origem da bigryto?</h1>
                     <p>Esse projeto foi criado por um aluno da universidade São Paulo Tech School que no período
-                        da pandemia precisava arrecadar dinheiro para ajudar a sua família e para o seu próprio lazer. </p>
+                        da pandemia precisava arrecadar dinheiro para ajudar a sua família e para o seu próprio lazer.
+                    </p>
                     <p>Nesse contexto, esse estudante se aprofundou no mercado financeiro e realizou algumas
                         compras e vendas de cryptos e NFT's, e desde então, ele é apaixonado por este ramo!</p>
                 </div>
@@ -140,26 +141,26 @@
                 <div class="campo-ano-cotacao">
                     <h1>selecionar por ano</h1>
                     <p>Selecione a ano e a moeda desejada:</p>
-                    <select>
-                        <option value="">Dolar</option>
-                        <option value="">Bitcoin</option>
-                        <option value="">Ethereum</option>
-                        <option value="">Solana</option>
+                    <select id="moeda_banco">
+                        <option value="1">Dolar</option>
+                        <option value="2">Bitcoin</option>
+                        <option value="3">Ethereum</option>
+                        <option value="4">Solana</option>
                     </select>
-                    <select>
-                        <option value="">2022</option>
-                        <option value="">2021</option>
-                        <option value="">2020</option>
-                        <option value="">2019</option>
-                        <option value="">2018</option>
-                        <option value="">2017</option>
+                    <select id="ano_banco">
+                        <option value="2022">2022</option>
+                        <option value="2021">2021</option>
+                        <option value="2020">2020</option>
+                        <option value="2019">2019</option>
+                        <option value="2018">2018</option>
+                        <option value="2017">2017</option>
                     </select>
-                    <button class="btn-cotar" onclick="ver_cotacao_aovivo()">Cotar</button>
+                    <button class="btn-cotar" onclick="ver_cotacao_banco()">Cotar</button>
 
                 </div>
                 <div class="grafico-ano-cotacao">
-                    <div class="grafico-aovivo">
-                        
+                    <div class="grafico-banco">
+                        <canvas id="banco"></canvas>
                     </div>
                 </div>
             </div>
@@ -279,7 +280,17 @@
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="js/navbar.js"></script>
+<script src="../src/controllers/cotacaoController.js"></script>
 <script>
+
+    function ver_cotacao_banco() {
+        var moeda = document.getElementById('moeda_banco');
+        var ano = document.getElementById('ano_banco');
+
+        localStorage.MOEDA = moeda;
+    }
+
+
     const ctx = document.getElementById('aoVivo');
     let graficoC = new Chart(ctx, {
         type: 'line',
@@ -287,7 +298,7 @@
             labels: [],
             datasets: [{
                 label: "Valor",
-                data: ["","","","","","","","","",""],
+                data: ["", "", "", "", "", "", "", "", "", ""],
                 borderWidth: 4,
                 borderColor: "Orange",
             }],
@@ -300,5 +311,26 @@
             }
         }
     });
-    
+
+    const grafB = document.getElementById('banco');
+    let graficoBanco = new Chart(grafB, {
+        type: 'line',
+        data: {
+            labels: [],
+            datasets: [{
+                label: "Valor",
+                data: ["", "", "", "", "", "", "", "", "", ""],
+                borderWidth: 4,
+                borderColor: "Orange",
+            }],
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: false
+                }
+            }
+        }
+    });
+
 </script>

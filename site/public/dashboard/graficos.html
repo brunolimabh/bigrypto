@@ -35,7 +35,9 @@
                 </div>
                 <div class="grafico-ano-cotacao">
                     <div class="grafico-aovivo">
-                        
+                        <div class="graph">
+                            <canvas id="myChartCanvas1"></canvas>
+                        </div>
                     </div>
                 </div>
         </section>
@@ -45,4 +47,26 @@
 
 <script>
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
+    const ctx = document.getElementById('aoVivo');
+    let graficoC = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: [],
+            datasets: [{
+                label: "Valor",
+                data: ["","","","","","","","","",""],
+                borderWidth: 4,
+                borderColor: "Orange",
+            }],
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: false
+                }
+            }
+        }
+    });
+    }
 </script>

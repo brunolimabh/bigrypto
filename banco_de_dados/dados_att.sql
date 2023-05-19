@@ -307,4 +307,9 @@ create user 'bigrypto'@'localhost' identified by 'urubu100';
 grant all on bigrypto.* to 'bigrypto'@'localhost';
 flush privileges;
 
+use bigrypto;
+
+select media from moedaAno where fkMoeda = 1 and fkAno = 2017;
+
+
 
