@@ -1,7 +1,7 @@
 create database bigrypto;
 use bigrypto;
 
-drop database bigrypto;
+-- drop database bigrypto;
 
 create table moeda (
 	idMoeda int primary key auto_increment,
@@ -25,6 +25,15 @@ CREATE TABLE usuario (
 	nome VARCHAR(50),
 	email VARCHAR(50),
 	senha VARCHAR(50)
+);
+
+CREATE TABLE calls (
+	idCall INT PRIMARY KEY AUTO_INCREMENT,
+    moeda varchar(20),
+    tipo varchar(10),
+    compra decimal(10,2),
+    saida decimal(10,2),
+    venda decimal(10,2)
 );
 
 insert into usuario values (null, 'bruno', 'bruno@gmail.com', 123321);
@@ -267,6 +276,13 @@ insert into moedaAno values
 
 -- Solana
 insert into moedaAno values
+	(4, 2020, 1, 0),
+	(4, 2020, 2, 0),
+	(4, 2020, 3, 0),
+	(4, 2020, 4, 0),
+	(4, 2020, 5, 0),
+	(4, 2020, 6, 0),
+	(4, 2020, 7, 0),
 	(4, 2020, 8, 8),
 	(4, 2020, 9, 25),
 	(4, 2020, 10, 15),
@@ -297,17 +313,20 @@ insert into moedaAno values
 	(4, 2022, 11, 170),
 	(4, 2022, 12, 74);
 
+INSERT INTO calls VALUES
+	(null,'SOL','LONG',100,98,105);
 
 select * from moeda;
 select * from ano;
 select * from moedaAno;
 select * from usuario;
+select * from calls;
 
-create user 'bigrypto'@'localhost' identified by 'urubu100';
-grant all on bigrypto.* to 'bigrypto'@'localhost';
-flush privileges;
+-- create user 'bigrypto'@'localhost' identified by 'urubu100';
+-- grant all on bigrypto.* to 'bigrypto'@'localhost';
+-- flush privileges;
 
-use bigrypto;
+-- use bigrypto;
 
 select media from moedaAno where fkMoeda = 1 and fkAno = 2017;
 

@@ -287,8 +287,80 @@
         var moeda = document.getElementById('moeda_banco');
         var ano = document.getElementById('ano_banco');
 
-        localStorage.MOEDA = moeda;
+        // localStorage.MOEDA_SELECIONADA = moeda.value;
+        // localStorage.ANO_SELECIONADA = ano.value;
+        fetch(`/cotacao/cotarBanco/${moeda.value}${ano.value}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
+
+                    plotarGrafico(resposta);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
     }
+
+    function plotarGrafico(resposta) {
+
+        console.log('iniciando plotagem do gráfico...');
+
+        // Criando estrutura para plotar gráfico - labels
+        let labels = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'];
+
+        // Criando estrutura para plotar gráfico - dados
+        let dados = {
+            labels: labels,
+            datasets: [
+            {
+                label: 'Valor',
+                data: [],
+                fill: false,
+                borderColor: 'rgb(199, 52, 52)',
+                borderWidth: 4
+            }]
+            
+        };
+
+        console.log('----------------------------------------------')
+        console.log('Estes dados foram recebidos pela funcao "cotarBanco" e passados para "plotarGrafico":')
+        console.log(resposta)
+
+        // Inserindo valores recebidos em estrutura para plotar o gráfico
+        for (i = 0; i < resposta.length; i++) {
+            var registro = resposta[i];
+            dados.datasets[0].data.push(registro.media);
+        }
+
+        console.log('----------------------------------------------')
+        console.log('O gráfico será plotado com os respectivos valores:')
+        console.log('Labels:')
+        console.log(labels)
+        console.log('Dados:')
+        console.log(dados.datasets)
+        console.log('----------------------------------------------')
+
+        // Criando estrutura para plotar gráfico - config
+        const config = {
+            type: 'line',
+            data: dados,
+        };
+
+        // Adicionando gráfico criado em div na tela
+        let myChart = new Chart(
+            document.getElementById(`banco`),
+            config
+        );
+
+        setTimeout(() => atualizarGrafico(dados, myChart), 2000);
+    }
+
+
 
 
     const ctx = document.getElementById('aoVivo');
@@ -311,26 +383,4 @@
             }
         }
     });
-
-    const grafB = document.getElementById('banco');
-    let graficoBanco = new Chart(grafB, {
-        type: 'line',
-        data: {
-            labels: [],
-            datasets: [{
-                label: "Valor",
-                data: ["", "", "", "", "", "", "", "", "", ""],
-                borderWidth: 4,
-                borderColor: "Orange",
-            }],
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: false
-                }
-            }
-        }
-    });
-
 </script>

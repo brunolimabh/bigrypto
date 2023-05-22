@@ -3,8 +3,8 @@ var router = express.Router();
 
 var cotacaoController = require("../controllers/cotacaoController");
 
-router.get("/cotacaoBanco", function (req, res) {
-    cotacaoController.cotacaoBanco(req, res);
+router.get("/cotarBanco/:moeda:ano", function (req, res) {
+    cotacaoController.cotarBanco(req, res);
 });
 
 

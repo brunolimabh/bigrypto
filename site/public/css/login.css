@@ -158,7 +158,6 @@
     transition: .3s;
     background-color: var(--laranja);
     box-shadow: 0 4px 4px black;
-    color: black;
     transform: translateY(-4px);
 }
 
