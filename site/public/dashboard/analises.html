@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> 
+
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,57 +11,42 @@
     <link rel="stylesheet" href="css/analises.css">
     <title>Bigrypto | Análises</title>
 </head>
+
 <body>
     <main>
         <section class="bemvindo">
             <h1>Bem-vindo ao <span> Bigrypto</span>!</h1>
         </section>
-        <section class="sobre">
-            <p>Aqui você pode acompanhar todas as análises, comentarios e operações feitas pelo dono do projeto!</p>
-            <h1>Mural de Análises</h1>
+        <section class="analises">
+            <div class="sobre">
+                <p>Aqui você pode acompanhar todas as análises, comentarios e operações feitas pelo dono do projeto!</p>
+                <h1>Mural de Análises</h1>
+            </div>
             <div class="div-results">
+                <div class="tabela">
+                    <h1>ID</h1>
+                    <h1>DATA</h1>
+                    <h1>MOEDA</h1>
+                    <h1>TIPO</h1>
+                    <h1>COMPRA</h1>
+                    <h1>STOP</h1>
+                    <h1>ALVO</h1>
+                </div>
                 <div id="feed_container" class="feed-container">
                 </div>
-            </div>
-        </section>
-        <section>
-            <div class="avisos">
-                <div class="container">
-                    <h1>Publicar um comentario</h1>
-                    <div class="div-form">
-                        <form id="form_postagem" method="post" onsubmit="return publicar()">
-                            <label>
-                                Título:
-                                <br>
-                                <input name="titulo" id="titulo" maxlength="100" type="text">
-                            </label>
-                            <br>
-                            <label>
-                                Descrição (máximo de 250 caracteres):
-                                <br>
-                                <textarea name="descricao" id="textarea_descricao" maxlength="250" rows="5"></textarea>
-                            </label>
-                            <br>
-                            <button>Enviar</button>
-                        </form>
-                    </div>
-                    <h1>Mural de Comentários</h1>
-                    <div class="div-results">
-                        <div id="feed_container" class="feed-container">
-                        </div>
-                    </div>
+                <div id="div_aguardar" class="loading-div">
+                    <img src="../assets/circle-loading.gif" id="loading-gif">
                 </div>
             </div>
         </section>
     </main>
 </body>
 </html>
-
+<script src="../js/funcoes.js"></script>
 <script>
-    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
-
+    atualizarAnalises()
     function atualizarAnalises() {
-        //aguardar();
+        aguardar();
         fetch("/analise/listarAnalises").then(function (resposta) {
             if (resposta.ok) {
                 if (resposta.status == 204) {
@@ -70,7 +56,6 @@
                     feed.appendChild(mensagem);
                     throw "Nenhum resultado encontrado!!";
                 }
-
                 resposta.json().then(function (resposta) {
                     console.log("Dados recebidos: ", JSON.stringify(resposta));
 
@@ -78,59 +63,51 @@
                     feed.innerHTML = "";
                     for (let i = 0; i < resposta.length; i++) {
                         var analise = resposta[i];
-
                         // criando e manipulando elementos do HTML via JavaScript
                         var divAnalise = document.createElement("div");
                         var pID = document.createElement("p");
-                        var pTitulo = document.createElement("p");
-                        var pNome = document.createElement("p");
-                        var divDescricao = document.createElement("div");
-                        var divButtons = document.createElement("div");
-                        var btnEditar = document.createElement("button");
-                        var btnDeletar = document.createElement("button");
+                        var pData = document.createElement("p");
+                        var pMoeda = document.createElement("p");
+                        var pTipo = document.createElement("p");
+                        var pCompra = document.createElement("p");
+                        var pStop = document.createElement("p");
+                        var pAlvo = document.createElement("p");
 
+                        pID.innerHTML = analise.idCall ;
+                        pData.innerHTML = analise.dataC ;
+                        pMoeda.innerHTML = analise.moeda ;
+                        pTipo.innerHTML = analise.tipo ;
+                        pCompra.innerHTML = analise.compra ;
+                        pStop.innerHTML = analise.saida ;
+                        pAlvo.innerHTML = analise.venda ;
+                        console.log(pTipo)
 
-                        pID.innerHTML = "ID: <b>" + analise.idCall + "</b>";
-                        pMoeda.innerHTML = "Título: <b>" + analise.moeda + "</b>";
-                        pNome.innerHTML = "Autor: <b>" + analise.nome + "</b>";
-                        divDescricao.innerHTML = "Descrição: <b>" + analise.descricao + "</b>";
-                        btnEditar.innerHTML = "Editar";
-                        btnDeletar.innerHTML = "Deletar";
+                        // if (pTipo.indexOf("LONG") == -1) {
+                        //     pTipo.style.color = 'red';
+                        // } else {
+                        //     pTipo.style.color = 'greenyellow';
+                        // }
 
-                        divPublicacao.className = "publicacao";
-                        pTitulo.id = "inputNumero" + analise.idAviso;
-                        pNome.className = "publicacao-nome";
-                        pTitulo.className = "publicacao-titulo";
-                        divDescricao.className = "publicacao-descricao";
+                        divAnalise.className = "divAnalise";
 
-                        divButtons.className = "div-buttons"
-
-                        btnEditar.className = "publicacao-btn-editar"
-                        btnEditar.id = "btnEditar" + analise.idAviso;
-                        btnEditar.setAttribute("onclick", `editar(${analise.idAviso})`);
-
-                        btnDeletar.className = "publicacao-btn-editar"
-                        btnDeletar.id = "btnDeletar" + analise.idAviso;
-                        btnDeletar.setAttribute("onclick", `deletar(${analise.idAviso})`);
-
-                        divPublicacao.appendChild(pID);
-                        divPublicacao.appendChild(pNome);
-                        divPublicacao.appendChild(pTitulo);
-                        divPublicacao.appendChild(divDescricao);
-                        divPublicacao.appendChild(divButtons);
-                        divButtons.appendChild(btnEditar);
-                        divButtons.appendChild(btnDeletar);
-                        feed.appendChild(divPublicacao);
+                        divAnalise.appendChild(pID);
+                        divAnalise.appendChild(pData);
+                        divAnalise.appendChild(pMoeda);
+                        divAnalise.appendChild(pTipo);
+                        divAnalise.appendChild(pCompra);
+                        divAnalise.appendChild(pStop);
+                        divAnalise.appendChild(pAlvo);
+                        feed.appendChild(divAnalise);
                     }
 
-                    // finalizarAguardar();
+                    finalizarAguardar();
                 });
             } else {
                 throw ('Houve um erro na API!');
             }
         }).catch(function (resposta) {
             console.error(resposta);
-            // finalizarAguardar();
+            finalizarAguardar();
         });
     }
 

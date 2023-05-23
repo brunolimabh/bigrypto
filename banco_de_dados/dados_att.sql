@@ -29,6 +29,7 @@ CREATE TABLE usuario (
 
 CREATE TABLE calls (
 	idCall INT PRIMARY KEY AUTO_INCREMENT,
+    dataC datetime,
     moeda varchar(20),
     tipo varchar(10),
     compra decimal(10,2),
@@ -314,8 +315,11 @@ insert into moedaAno values
 	(4, 2022, 12, 74);
 
 INSERT INTO calls VALUES
-	(null,'SOL','LONG',100,98,105);
-
+	(null, '2023-05-23 14:00','SOL','LONG',100,98,105),
+	(null, '2023-05-23 15:00','ICP','LONG',5.0,4.8,5.5),
+	(null, '2023-05-23 14:00','ETH','SHORT',1800,1950,1750),
+	(null, '2023-05-23 15:00','FET','SHORT',0.24,0.40,0.19);
+    
 select * from moeda;
 select * from ano;
 select * from moedaAno;
@@ -326,7 +330,7 @@ select * from calls;
 -- grant all on bigrypto.* to 'bigrypto'@'localhost';
 -- flush privileges;
 
--- use bigrypto;
+use bigrypto;
 
 select media from moedaAno where fkMoeda = 1 and fkAno = 2017;
 
