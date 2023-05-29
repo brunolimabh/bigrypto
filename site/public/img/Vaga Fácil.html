@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<!-- saved from url=(0045)http://localhost:3333/dashboard/usuarios.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./Vaga Fácil_files/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="./Vaga Fácil_files/reset.css">
+    <link rel="stylesheet" href="./Vaga Fácil_files/nav.css">
+    <link rel="stylesheet" href="./Vaga Fácil_files/usuarios.css">
+    <link rel="stylesheet" href="./Vaga Fácil_files/footer.css">
+    <script src="./Vaga Fácil_files/menuH.js.download"></script>
+    <script src="./Vaga Fácil_files/usuarios.js.download"></script>
+    <title>Vaga Fácil</title>
+</head>
+
+<body cz-shortcut-listen="true">
+    <!-- Começo do Header -->
+    <header>
+        <nav class="nav">
+            
+            <a href="http://localhost:3333/dashboard/usuarios.html"><img class="logo" src="./Vaga Fácil_files/logo.png" alt="Home"></a>
+            
+            <img class="menuH" onclick="menuH()" src="./Vaga Fácil_files/menuH.png" alt="Menu Hamburguer">
+            
+            <div id="listaMenuH">
+                <img onclick="seta()" src="./Vaga Fácil_files/seta.png" alt="">
+                <ul class="itens-menuH">
+                    <!-- <li><a href="dashboard.html">Dashboard</a></li> -->
+                    <li><a href="http://localhost:3333/dashboard/acompanhar.html">Acompanhar</a></li>
+                    <li><a href="http://localhost:3333/dashboard/expandir.html">Expandir</a></li>
+                    <li><a href="http://localhost:3333/dashboard/perfil.html">Perfil</a></li>
+                    <li><a href="http://localhost:3333/dashboard/usuarios.html">Lista de usuários</a></li>
+                    <li><a href="http://localhost:3333/dashboard/adicionarUsuario.html">Adicionar usuário</a></li>
+                    <button class="btn-site" onclick="sair()">Site Institucional</button>
+                </ul>
+            </div>
+        </nav>
+        <div id="alertSair">
+            <div class="caixa">
+                <h1>Deseja voltar para o Site Institucional?</h1>
+                <button onclick="sim()">Sim</button>
+                <button onclick="nao()">Não</button>
+            </div>
+        </div>
+    </header>
+    <!-- Fim do Header -->
+    
+    <main>
+        <div class="lista">
+            <div class="campo-usuarios">
+                <div class="pesquisa">
+                    <input id="ipt_pesquisa" type="text" placeholder="Pesquisar usuário" oninput="pesquisa()">
+                </div>
+                <div id="scroll"><div_funcionario class="usuarios" onclick="exibir(100001)"><img class="foto" src="./Vaga Fácil_files/usuarioPadrao.png"><h1 class="nome">Bruno Lima</h1><img class="seta" src="./Vaga Fácil_files/4028647.png"></div_funcionario><div_funcionario class="usuarios" onclick="exibir(100002)"><img class="foto" src="./Vaga Fácil_files/usuarioPadrao.png"><h1 class="nome">Daniel Yuzo</h1><img class="seta" src="./Vaga Fácil_files/4028647.png"></div_funcionario><div_funcionario class="usuarios" onclick="exibir(100003)"><img class="foto" src="./Vaga Fácil_files/usuarioPadrao.png"><h1 class="nome">Gabriel Branco</h1><img class="seta" src="./Vaga Fácil_files/4028647.png"></div_funcionario><div_funcionario class="usuarios" onclick="exibir(100004)"><img class="foto" src="./Vaga Fácil_files/usuarioPadrao.png"><h1 class="nome">Henrique Bechis</h1><img class="seta" src="./Vaga Fácil_files/4028647.png"></div_funcionario><div_funcionario class="usuarios" onclick="exibir(100005)"><img class="foto" src="./Vaga Fácil_files/usuarioPadrao.png"><h1 class="nome">Lucas Neves</h1><img class="seta" src="./Vaga Fácil_files/4028647.png"></div_funcionario></div>
+            </div>
+            <div class="campo-info">
+                <h1>Informações</h1>
+                <div class="space-campo-info">
+                    <div class="perguntas">
+                        <p>Nome</p>
+                        <p>Nascimento</p>
+                        <p>CPF</p>
+                        <p>Telefone</p>
+                        <p>Email</p>
+                    </div>
+                    <form class="respostas" id="form_infos">
+                        <p id="nome" name="nome">Lucas Neves</p>
+                        <p id="dataN" name="">1975-08-01T03:00:00.000Z</p>
+                        <p id="cpf" name="">456.987.652-30</p>
+                        <p id="telefone" name="">(11)97890-0987</p>
+                        <p id="email" name="">lucas@gmail.com</p>
+                    </form>
+                </div>
+                <div class="space-btn">
+                    <button id="btn-excluir">Excluir usuário</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="rodape">
+            <div class="container">
+                <div class="cardFooter">
+                    <img src="./Vaga Fácil_files/logo.png" id="logoFooter">
+                </div>
+                <div class="cardFooterCentral">
+                    <ul>
+                        <!-- <li>
+                            <a href="dashboard.html">Dashboard</a>
+                        </li> -->
+                        <li>
+                            <a href="http://localhost:3333/dashboard/Acompanhar.html">Acompanhar</a>
+                        </li>
+                        <li>
+                            <a href="http://localhost:3333/dashboard/expandir.html">Expandir</a>
+                        </li>
+                        <li>
+                            <a href="http://localhost:3333/dashboard/perfil.html">Perfil</a>
+                        </li>
+                        <li>
+                            <a href="http://localhost:3333/dashboard/usuarios.html">Lista de usuários</a>
+                        </li>
+                        <li>
+                            <a href="http://localhost:3333/dashboard/adicionarUsuario.html">Adicionar usuário</a>
+                        </li>
+                        <li>
+                            <a href="http://localhost:3333/index.html">Site Institucional</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="cardFooter">
+                    <a href="http://localhost:3333/dashboard/usuarios.html"><img src="./Vaga Fácil_files/instagram.png" alt="Link para nossa página no instagram"></a>
+                    <a href="http://localhost:3333/dashboard/usuarios.html"><img src="./Vaga Fácil_files/facebook.png" alt="Link para nossa página no FaceBook"></a>
+                    <a href="http://localhost:3333/dashboard/usuarios.html"><img src="./Vaga Fácil_files/twitter.png" alt="Link para nossa página no Twitter"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+<script>
+        var idFuncionario = sessionStorage.ID_FUNCIONARIO;
+
+        atualizarFormulario(idFuncionario)
+
+
+</script></body></html>
