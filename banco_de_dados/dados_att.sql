@@ -24,7 +24,9 @@ CREATE TABLE usuario (
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	nome VARCHAR(50),
 	email VARCHAR(50),
-	senha VARCHAR(50)
+	senha VARCHAR(50),
+    nivel CHAR(1),
+	CONSTRAINT CHK_nivel CHECK (nivel in(1,2,3))
 );
 
 CREATE TABLE calls (
@@ -330,9 +332,8 @@ select * from calls;
 -- grant all on bigrypto.* to 'bigrypto'@'localhost';
 -- flush privileges;
 
-use bigrypto;
-
-select media from moedaAno where fkMoeda = 1 and fkAno = 2017;
+INSERT INTO usuario values
+	(null,'Bruno','bruno@gmail.com','123321',3);
 
 
 

@@ -69,9 +69,14 @@
                                     <div id="cardErroNome">+ de 2 caractereres</div>
                                 </div>
                                 <div class="espaco-campos">
-                                    <p>Sobrenome</p>
-                                    <input type="text" id="ipt_c_sobrenome">
-                                    <div id="cardErroSobrenome">+ de 2 caractereres</div>
+                                    <p>Nivel de Investidor</p>
+                                    <select id="ipt_c_nivel">
+                                        <option value="0" data-default disabled selected>Selecione...</option>
+                                        <option value="1">Conservador</option>
+                                        <option value="2">Moderado</option>
+                                        <option value="3">Agressivo</option>
+                                    </select>
+                                    <div id="cardErroNivel">Informe um nível</div>
                                 </div>
                             </div>
                             <div class="espaco-email">
@@ -237,7 +242,7 @@
         // aguardar();
 
         var nomeVar = ipt_c_nome.value;
-        var sobrenomeVar = ipt_c_sobrenome.value;
+        var nivelVar = ipt_c_nivel.value;
         var emailVar = ipt_c_email.value;
         var senhaVar = ipt_c_senha.value;
         var confirmacaoSenhaVar = ipt_c_confirmacaoSenha.value;
@@ -251,13 +256,13 @@
             cardErroNome.style.display = `none`;
             ipt_c_nome.style.border = `2px solid var(--laranja)`;
         }
-        if (sobrenomeVar == '' || nomeVar.length < 2) {
-            cardErroSobrenome.style.display = `block`;
-            ipt_c_sobrenome.style.border = `2px solid red`;
+        if (nivelVar == 0) {
+            cardErroNivel.style.display = `block`;
+            ipt_c_nivel.style.border = `2px solid red`;
             erroCadastro = true;
         } else {
-            cardErroSobrenome.style.display = `none`;
-            ipt_c_sobrenome.style.border = `2px solid var(--laranja)`;
+            cardErroNivel.style.display = `none`;
+            ipt_c_nivel.style.border = `2px solid var(--laranja)`;
         }
         if (emailVar == '' || emailVar.indexOf('@') == -1 || emailVar.indexOf('.') == -1) {
             cardErroCEmail.style.display = `block`;
