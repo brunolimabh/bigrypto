@@ -4,23 +4,6 @@
 // resumo, THEN, pega oq esta dentro dessa resposta e me retorna em json,
 // e dentro dessa respoosta eu quero o corpo desse resposta e me retorne
 
-// function ver_cotacao_banco() {
-//     const mysql = require('mysql2');
-//     var onde = '';
-//     const poolBancoDados = mysql.createPool(
-//         {
-//             host: 'localhost',
-//             port: 3306,
-//             user: 'big_individual',
-//             password: 'urubu100',
-//             database: 'bigrypto'
-//         }
-//     ).promise();
-//     poolBancoDados.execute(
-//         `SELECT media FROM moedaAno WHERE ${}`,
-//     );
-// }
-
 function ver_cotacao_aovivo() {
     var listaPreco = [];
     var listaData = [];

@@ -26,7 +26,7 @@ CREATE TABLE usuario (
 	email VARCHAR(50),
 	senha VARCHAR(50),
     nivel CHAR(1),
-	CONSTRAINT CHK_nivel CHECK (nivel in(1,2,3))
+	CONSTRAINT CHK_User_Nivel CHECK (nivel in(1,2,3))
 );
 
 CREATE TABLE calls (
@@ -36,10 +36,9 @@ CREATE TABLE calls (
     tipo varchar(10),
     compra decimal(10,2),
     saida decimal(10,2),
-    venda decimal(10,2)
+    venda decimal(10,2),
+    nivel CHAR(1)
 );
-
-insert into usuario values (null, 'bruno', 'bruno@gmail.com', 123321);
 
 -- Moedas disponíveis para consulta
 insert into moeda values
@@ -317,23 +316,33 @@ insert into moedaAno values
 	(4, 2022, 12, 74);
 
 INSERT INTO calls VALUES
-	(null, '2023-05-23 14:00','SOL','LONG',100,98,105),
-	(null, '2023-05-23 15:00','ICP','LONG',5.0,4.8,5.5),
-	(null, '2023-05-23 14:00','ETH','SHORT',1800,1950,1750),
-	(null, '2023-05-23 15:00','FET','SHORT',0.24,0.40,0.19);
+	(null, '2023-05-23 14:00','SOL','LONG',100,98,105,1),
+	(null, '2023-05-23 15:00','ICP','LONG',5.0,4.8,5.5,2),
+	(null, '2023-05-23 14:00','ETH','SHORT',1800,1950,1750,3),
+	(null, '2023-05-23 15:00','FET','SHORT',0.24,0.40,0.19,3),
+    (null, '2023-05-27 14:00','BTC','SHORT',27000,27200,26300,1),
+	-- (null, '2023-05-29 15:00','NKN','SHORT',,,,2),
+	-- (null, '2023-05-30 14:00','','LONG',,,,3),
+	(null, '2023-05-31 15:00','ICP','LONG',5.5,5,7.5,3);
     
-select * from moeda;
-select * from ano;
-select * from moedaAno;
-select * from usuario;
-select * from calls;
+INSERT INTO usuario values
+	(null,'Bruno','bruno@gmail.com','123321',3);
+    
+-- use bigrypto;
+-- select * from moeda;
+-- select * from ano;
+-- select * from moedaAno;
+-- select * from usuario;
+-- select * from calls;
+
 
 -- create user 'bigrypto'@'localhost' identified by 'urubu100';
 -- grant all on bigrypto.* to 'bigrypto'@'localhost';
 -- flush privileges;
 
-INSERT INTO usuario values
-	(null,'Bruno','bruno@gmail.com','123321',3);
+-- drop database bigrypto;
+
+
 
 
 

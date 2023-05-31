@@ -41,13 +41,16 @@
         </section>
     </main>
 </body>
+
 </html>
 <script src="../js/funcoes.js"></script>
 <script>
     atualizarAnalises()
     function atualizarAnalises() {
         aguardar();
-        fetch("/analise/listarAnalises").then(function (resposta) {
+        var nivel = sessionStorage.NIVEL_USER;
+
+        fetch(`/analise/listarAnalises/${nivel}`).then(function (resposta) {
             if (resposta.ok) {
                 if (resposta.status == 204) {
                     var feed = document.getElementById("feed_container");
@@ -68,25 +71,28 @@
                         var pID = document.createElement("p");
                         var pData = document.createElement("p");
                         var pMoeda = document.createElement("p");
-                        var pTipo = document.createElement("p");
+                        var pTipo = document.createElement("span");
                         var pCompra = document.createElement("p");
                         var pStop = document.createElement("p");
                         var pAlvo = document.createElement("p");
 
-                        pID.innerHTML = analise.idCall ;
-                        pData.innerHTML = analise.dataC ;
-                        pMoeda.innerHTML = analise.moeda ;
-                        pTipo.innerHTML = analise.tipo ;
-                        pCompra.innerHTML = analise.compra ;
-                        pStop.innerHTML = analise.saida ;
-                        pAlvo.innerHTML = analise.venda ;
+                        var data = new Date(analise.dataC)
+                        data = `${data.getDate()}/${data.getUTCMonth()+1}/${data.getFullYear()} ${data.getHours()}:00`;
+                        pID.innerHTML = analise.idCall;
+                        pData.innerHTML = data;
+                        pMoeda.innerHTML = analise.moeda;
+                        pTipo.innerHTML = analise.tipo;
+                        pCompra.innerHTML = analise.compra;
+                        pStop.innerHTML = analise.saida;
+                        pAlvo.innerHTML = analise.venda;
                         console.log(pTipo)
 
-                        // if (pTipo.indexOf("LONG") == -1) {
-                        //     pTipo.style.color = 'red';
-                        // } else {
-                        //     pTipo.style.color = 'greenyellow';
-                        // }
+                        // tipo = analise.tipo
+                        if (analise.tipo == 'SHORT') {
+                            pTipo.style.color = 'red';
+                        } else {
+                            pTipo.style.color = 'rgb(113, 255, 47)';
+                        }
 
                         divAnalise.className = "divAnalise";
 
