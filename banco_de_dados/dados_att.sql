@@ -342,7 +342,3 @@ INSERT INTO usuario values
 
 -- drop database bigrypto;
 
-
-
-
-

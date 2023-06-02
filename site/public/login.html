@@ -16,7 +16,7 @@
 <body>
     <header>
         <div id="nav">
-            <img src="img/logo.png" alt="logo" class="logo">
+            <a href="index.html#video"><img src="img/logo.png" alt="logo" class="logo"></a>
             <ul id="listaNav" class="nav-lista-vazio">
                 <li><a href="index.html#sobre">Sobre a Bigrypto</a></li>
                 <li><a href="index.html#crypto">Crypto</a></li>
@@ -53,7 +53,16 @@
                                 <div id="cardErroLSenha">Senha incorreta</div>
                             </div>
                         </div>
-                        <button onclick="entrar()">entrar</button>
+                        <!-- <button onclick="entrar()">entrar</button> -->
+                        <div class="login-box">
+                            <a href="#">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <h2 onclick="entrar()">ENTRAR</h2>
+                            </a>
+                        </div>
                         <div id="div_aguardar" class="loading-div">
                             <img src="./assets/circle-loading.gif" id="loading-gif">
                         </div>
@@ -184,7 +193,7 @@
                         sessionStorage.EMAIL_USUARIO = json.email;
                         sessionStorage.NOME_USUARIO = json.nome;
                         sessionStorage.ID_USUARIO = json.id;
-                        sessionStorage.NIVEL_USER = json.nivel
+                        sessionStorage.NIVEL_USER = json.nivel;
 
                         setTimeout(function () {
                             window.location = "dashboard/index.html";
@@ -243,7 +252,7 @@
         // aguardar();
 
         var nomeVar = ipt_c_nome.value;
-        var nivelVar = ipt_c_nivel.value;
+        var nivelVar = Number(ipt_c_nivel.value);
         var emailVar = ipt_c_email.value;
         var senhaVar = ipt_c_senha.value;
         var confirmacaoSenhaVar = ipt_c_confirmacaoSenha.value;
@@ -308,7 +317,8 @@
                     // Agora vá para o arquivo routes/usuario.js
                     nomeServer: nomeVar,
                     emailServer: emailVar,
-                    senhaServer: senhaVar
+                    senhaServer: senhaVar,
+                    nivelServer: nivelVar
                 })
             }).then(function (resposta) {
 

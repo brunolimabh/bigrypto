@@ -160,6 +160,7 @@
     background-color: var(--laranja);
     box-shadow: 0 4px 4px black;
     transform: translateY(-4px);
+    color: black;
 }
 
 
@@ -307,3 +308,120 @@
 #displayCadastro {
     display: none;
 }
+
+.login-box {
+    /* position: absolute;
+    top: 50%;
+    left: 50%; */
+    text-align: center;
+    width: auto;
+    margin: 10px 43%;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    border-radius: 10px;
+  }
+.login-box h2 {
+    font-size: 20px;
+}
+  .login-box a {
+    position: relative;
+    display: inline-block;
+    color: var(--laranja);
+    font-size: 16px;
+    text-decoration: none;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    letter-spacing: 4px;
+    font-family: 'Poppins';
+  }
+.login-box a:hover {
+    transition: ;
+    background: var(--laranja);
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px var(--laranja),
+                0 0 25px var(--laranja),
+                0 0 50px var(--laranja),
+                0 0 100px var(--laranja);
+  }
+  
+  .login-box a span {
+    position: absolute;
+    display: block;
+  }
+  
+  .login-box a span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--laranja));
+    animation: btn-anim1 1s linear infinite;
+  }
+  
+  @keyframes btn-anim1 {
+    0% {
+      left: -100%;
+    }
+    50%,100% {
+      left: 100%;
+    }
+  }
+  
+  .login-box a span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, var(--laranja));
+    animation: btn-anim2 1s linear infinite;
+    animation-delay: .25s
+  }
+  
+  @keyframes btn-anim2 {
+    0% {
+      top: -100%;
+    }
+    50%,100% {
+      top: 100%;
+    }
+  }
+  
+  .login-box a span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, var(--laranja));
+    animation: btn-anim3 1s linear infinite;
+    animation-delay: .5s
+  }
+  
+  @keyframes btn-anim3 {
+    0% {
+      right: -100%;
+    }
+    50%,100% {
+      right: 100%;
+    }
+  }
+  
+  .login-box a span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, var(--laranja));
+    animation: btn-anim4 1s linear infinite;
+    animation-delay: .75s
+  }
+  @keyframes btn-anim4 {
+    0% {
+      bottom: -100%;
+    }
+    50%,100% {
+      bottom: 100%;
+    }
+  }
