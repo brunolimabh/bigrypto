@@ -76,7 +76,6 @@
 
 .btn-login-cadastro h1:hover {
   transition: .5s;
-  color: black;
 }
 
 #btnLogin {
@@ -109,13 +108,13 @@
   background-color: rgba(0, 0, 0, 0.393);
   display: flex;
   flex-direction: column;
-  padding: 20px 0;
   backdrop-filter: blur(10px);
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   border: 2px solid rgb(255, 180, 42);
   border-style: none solid solid solid;
   box-shadow: 0 4px 8px black;
+  padding: 20px 0;
 }
 
 
@@ -132,10 +131,12 @@
 .espaco-geral {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
-  width: 100%;
+  justify-content: space-around;
+  width: 90%;
   height: 80px;
   position: relative;
+  margin: 0 auto;
+  z-index: 0;
 }
 .espaco-campos {
   display: flex;
@@ -145,16 +146,17 @@
   width: 40%;
   height: 80px;
   position: relative;
+  margin: 0 auto;
 }
 .espaco-email {
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: start;
-  width: 100%;
-  margin: 0 auto;
-  height: 90px;
+  width: 84%;
+  height: 80px;
   position: relative;
+  margin: 0 auto;
 }
 
 #campoLogin .espaco-login label {
@@ -177,6 +179,7 @@
   font-family: 'Montserrat';
   text-align: start;
 }
+
 #campoLogin .espaco-login input:focus ~label,
 #campoLogin .espaco-login input:valid~label {
   top: -20px;
@@ -191,11 +194,32 @@
   color: white;
   font-size: 12px;
 }
+#campoCadastro .espaco-email label {
+  position: absolute;
+  top:0;
+  left: 16px;
+  padding: 10px ;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: .5s;
+  font-family: 'Montserrat';
+  text-align: start;
+}
+#campoCadastro .espaco-email input:focus ~label,
+#campoCadastro .espaco-email input:valid~label {
+  top: -20px;
+  color: white;
+  font-size: 12px;
+}
 
 #campoLogin input{
   width: 70%;
 }
-#campoCadastro input {
+#campoCadastro .espaco-campos input {
+  width: 85%;
+}
+#campoCadastro .espaco-email input {
   width: 90%;
 }
 #campoLogin input,
@@ -212,11 +236,13 @@
 }
 
 #campoCadastro select {
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
   padding: 10px 0;
   font-size: 16px;
-  color: #fff;
+  color: white;
+  font-family: 'Poppins';
+  background-color: var(--laranja);
   border: none;
   border-bottom: 2px solid var(--laranja);
   outline: none;
@@ -251,7 +277,7 @@
   font-weight: bolder;
   font-size: 14px;
   color: red;
-  width: 70%;
+  width: 90%;
   margin: 0 auto;
   text-align: start;
 }
@@ -387,4 +413,51 @@
   100% {
     bottom: 100%;
   }
+}
+
+
+.tooltip {
+  position: absolute;
+  display: inline-block;
+  top: 30px;
+  right: 10px; 
+  color: black;
+  font-family: 'Poppins';
+  padding: 5px 10px;
+  border-radius: 50%;
+  background-color: var(--laranja);
+  cursor: pointer;
+  z-index: 1;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 130px;
+  background-color: var(--laranja);
+  color: black;
+  text-align: start;
+  padding: 10px;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip:after {
+  content: "";
+  position: absolute;
+  margin-left: -5px;
+  background-color: transparent;
+  transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.3s;
 }

@@ -17,14 +17,15 @@
         <p>Olá, <span id="b_usuario">usuário</span>!</p>
         <ul class="nav-lista">
             <a href="analises.html" target="pages">Análises</a>
-            <a href="graficos.html" target="pages">Gráficos</a>
+            <a href="mario.html" target="pages">Marypto</a>
+            <a href="ranking.html" target="pages">Ranking Marypto</a>
             <a onclick="limparSessao()">Sair</a>
         </ul>
         <p class="footer"></p>
     </nav>
 
     <main class="frame">
-        <iframe src="analises.html" name="pages" scrolling="auto"></iframe>
+        <iframe src="ranking.html" name="pages" scrolling="auto"></iframe>
     </main>
 
 </body>
@@ -33,6 +34,4 @@
 <script src="../js/funcoes.js"></script>
 <script>
     validarSessao()
-    
-    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 </script>

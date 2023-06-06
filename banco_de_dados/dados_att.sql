@@ -40,6 +40,15 @@ CREATE TABLE calls (
     nivel CHAR(1)
 );
 
+CREATE TABLE tempos (
+	idTempos int auto_increment primary key,
+	fkUsuario int,
+    foreign key(fkUsuario) references usuario(id),
+    tempo int
+);
+
+select nome, tempo from tempos JOIN usuario where fkUsuario = id;
+
 -- Moedas disponíveis para consulta
 insert into moeda values
 	(null, 'Dolar'),

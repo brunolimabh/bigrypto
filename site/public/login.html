@@ -29,6 +29,7 @@
 
     <main>
         <section id="login">
+            
             <div class="alerta_erro">
                 <div class="card_erro" id="cardErro">
                     <span id="mensagem_erro"></span>
@@ -70,6 +71,14 @@
                 </div>
                 <div id="displayCadastro">
                     <div id="campoCadastro">
+                        <div class="tooltip">?
+                            <span class="tooltiptext">
+                                Tipos de níveis: <br><br>
+                                1 - Conservador <br>
+                                2 - Moderado <br>
+                                3 - Agressivo <br>
+                            </span>
+                          </div>
                         <div class="ipt-cadastro">
                             <div class="espaco-geral">
                                 <div class="espaco-campos">
@@ -78,14 +87,15 @@
                                     <div id="cardErroNome">+ de 2 caractereres</div>
                                 </div>
                                 <div class="espaco-campos">
-                                    <select id="ipt_c_nivel">
+                                    <input type="text" id="ipt_c_nivel" required>
+                                    <!-- <select id="ipt_c_nivel">
                                         <option value="0" data-default disabled selected></option>
                                         <option value="1">Conservador</option>
                                         <option value="2">Moderado</option>
                                         <option value="3">Agressivo</option>
-                                    </select>
+                                    </select> -->
                                     <label>Nivel de Investidor</label>
-                                    <div id="cardErroNivel">Informe um nível</div>
+                                    <div id="cardErroNivel">Entre 1-3</div>
                                 </div>
                             </div>
                             <div class="espaco-email">
@@ -269,43 +279,43 @@
 
         if (nomeVar == '' || nomeVar.length < 2) {
             cardErroNome.style.display = `block`;
-            ipt_c_nome.style.border = `2px solid red`;
+            ipt_c_nome.style.borderBottom = `2px solid red`;
             erroCadastro = true;
         } else {
             cardErroNome.style.display = `none`;
-            ipt_c_nome.style.border = `2px solid var(--laranja)`;
+            ipt_c_nome.style.borderBottom = `2px solid var(--laranja)`;
         }
-        if (nivelVar == 0) {
+        if (nivelVar == '' || isNaN(nivelVar) || nivelVar < 1 || nivelVar > 3) {
             cardErroNivel.style.display = `block`;
-            ipt_c_nivel.style.border = `2px solid red`;
+            ipt_c_nivel.style.borderBottom = `2px solid red`;
             erroCadastro = true;
         } else {
             cardErroNivel.style.display = `none`;
-            ipt_c_nivel.style.border = `2px solid var(--laranja)`;
+            ipt_c_nivel.style.borderBottom = `2px solid var(--laranja)`;
         }
         if (emailVar == '' || emailVar.indexOf('@') == -1 || emailVar.indexOf('.') == -1) {
             cardErroCEmail.style.display = `block`;
-            ipt_c_email.style.border = `2px solid red`;
+            ipt_c_email.style.borderBottom = `2px solid red`;
             erroCadastro = true;
         } else {
             cardErroCEmail.style.display = `none`;
-            ipt_c_email.style.border = `2px solid var(--laranja)`;
+            ipt_c_email.style.borderBottom = `2px solid var(--laranja)`;
         }
         if (senhaVar == '' || senhaVar.length < 6) {
             cardErroCSenha.style.display = `block`;
-            ipt_c_senha.style.border = `2px solid red`;
+            ipt_c_senha.style.borderBottom = `2px solid red`;
             erroCadastro = true;
         } else {
             cardErroCSenha.style.display = `none`;
-            ipt_c_senha.style.border = `2px solid var(--laranja)`;
+            ipt_c_senha.style.borderBottom = `2px solid var(--laranja)`;
         }
         if (confirmacaoSenhaVar == '' || confirmacaoSenhaVar != senhaVar) {
             cardErroConfirmarSenha.style.display = `block`;
-            ipt_c_confirmacaoSenha.style.border = `2px solid red`;
+            ipt_c_confirmacaoSenha.style.borderBottom = `2px solid red`;
             erroCadastro = true;
         } else {
             cardErroConfirmarSenha.style.display = `none`;
-            ipt_c_confirmacaoSenha.style.border = `2px solid var(--laranja)`;
+            ipt_c_confirmacaoSenha.style.borderBottom = `2px solid var(--laranja)`;
         }
 
         if (erroCadastro == true) {
