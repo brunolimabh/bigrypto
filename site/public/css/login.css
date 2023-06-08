@@ -98,7 +98,6 @@
   border: 2px solid rgb(255, 180, 42);
   box-shadow: 0 4px 8px black;
   border-style: none solid solid solid;
-  box-sizing: border-box;
 }
 #campoCadastro {
   width: 100%;

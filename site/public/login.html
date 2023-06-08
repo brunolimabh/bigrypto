@@ -29,7 +29,7 @@
 
     <main>
         <section id="login">
-            
+
             <div class="alerta_erro">
                 <div class="card_erro" id="cardErro">
                     <span id="mensagem_erro"></span>
@@ -76,9 +76,10 @@
                                 Tipos de níveis: <br><br>
                                 1 - Conservador <br>
                                 2 - Moderado <br>
-                                3 - Agressivo <br>
+                                3 - Agressivo <br><br>
+                                Informe o número no campo!
                             </span>
-                          </div>
+                        </div>
                         <div class="ipt-cadastro">
                             <div class="espaco-geral">
                                 <div class="espaco-campos">
@@ -88,12 +89,6 @@
                                 </div>
                                 <div class="espaco-campos">
                                     <input type="text" id="ipt_c_nivel" required>
-                                    <!-- <select id="ipt_c_nivel">
-                                        <option value="0" data-default disabled selected></option>
-                                        <option value="1">Conservador</option>
-                                        <option value="2">Moderado</option>
-                                        <option value="3">Agressivo</option>
-                                    </select> -->
                                     <label>Nivel de Investidor</label>
                                     <div id="cardErroNivel">Entre 1-3</div>
                                 </div>
@@ -124,6 +119,9 @@
                                 <span></span>
                                 <h2 onclick="cadastrar()">CADASTRAR</h2>
                             </a>
+                        </div>
+                        <div id="div_aguardarC" class="loading-div">
+                            <img src="./assets/circle-loading.gif" id="loading-gif">
                         </div>
                     </div>
                 </div>
@@ -268,7 +266,7 @@
     }
 
     function cadastrar() {
-        // aguardar();
+        aguardarC();
 
         var nomeVar = ipt_c_nome.value;
         var nivelVar = Number(ipt_c_nivel.value);
@@ -317,54 +315,44 @@
             cardErroConfirmarSenha.style.display = `none`;
             ipt_c_confirmacaoSenha.style.borderBottom = `2px solid var(--laranja)`;
         }
-
         if (erroCadastro == true) {
-            // finalizarAguardar();
+            finalizarAguardar();
             return false;
         }
         else {
-            // setInterval(sumirMensagem, 5000)
-
-            // Enviando o valor da nova input
             fetch("/usuarios/cadastrar", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
-                    // crie um atributo que recebe o valor recuperado aqui
-                    // Agora vá para o arquivo routes/usuario.js
                     nomeServer: nomeVar,
                     emailServer: emailVar,
                     senhaServer: senhaVar,
                     nivelServer: nivelVar
                 })
             }).then(function (resposta) {
-
-                console.log("resposta: ", resposta);
-
                 if (resposta.ok) {
-                    // cardErro.style.display = "block";
-
-                    // mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
-
+                    cardErro.style.display = "block"
+                    cardErro.style.border = "2px solid greenyellow"
+                    cardErro.style.color = "greenyellow"
+                    mensagem_erro.innerHTML = "✅Cadastro realizado com sucesso!✅<br>Aguarde...";
                     setTimeout(() => {
                         window.location = "login.html";
                     }, "2000")
-
-                    // limparFormulario();
-                    // finalizarAguardar();
                 } else {
                     throw ("Houve um erro ao tentar realizar o cadastro!");
+                    cardErro.style.display = "block"
+                    cardErro.style.border = "2px solid red"
+                    cardErro.style.color = "red"
+                    mensagem_erro.innerHTML = "❌Conta já existente ou dados inválidos❌<br>Tente novamente...";
+                    finalizarAguardar();
                 }
             }).catch(function (resposta) {
                 console.log(`#ERRO: ${resposta}`);
-                // finalizarAguardar();
+                finalizarAguardar();
             });
-
             return false;
         }
-
     }
-
 </script>

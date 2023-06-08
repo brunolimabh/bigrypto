@@ -29,6 +29,10 @@ function aguardar() {
     var divAguardar = document.getElementById("div_aguardar");
     divAguardar.style.display = "flex";
 }
+function aguardarC() {
+    var divAguardar = document.getElementById("div_aguardarC");
+    divAguardar.style.display = "flex";
+}
 
 function finalizarAguardar(texto) {
     var divAguardar = document.getElementById("div_aguardar");
@@ -38,6 +42,17 @@ function finalizarAguardar(texto) {
     if (texto) {
         divErrosLogin.style.display = "flex";
         divErrosLogin.innerHTML = texto;
+    }
+}
+
+function finalizarAguardarC(texto) {
+    var divAguardar = document.getElementById("div_aguardarC");
+    divAguardar.style.display = "none";
+
+    var divErrosCadastro = document.getElementById("div_erros_cadastro");
+    if (texto) {
+        divErrosCadastro.style.display = "flex";
+        divErrosCadastro.innerHTML = texto;
     }
 }
 
